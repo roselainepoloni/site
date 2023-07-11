@@ -1,0 +1,8 @@
+url: 'https://maquininhasdecartao.net.br'
+baseurl: ''
+
+plugins:
+  - jekyll-postcss
+
+postcss:
+  cache: false
