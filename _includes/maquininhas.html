@@ -1,0 +1,69 @@
+<div class="flex flex-col lg:mx-auto lg:max-w-[1280px] flex-wrap md:overflow-x-auto md:px-24 md:pb-24 xl:px-0 xl:overflow-x-hidden">
+  <div class="hidden gap-16 lg:gap-24 md:flex">
+    <div class="p-8 min-w-[616px] lg:min-w-[624px] bg-newTon-50 rounded-[8px]">
+      <p class="font-bold text-center text-newTon-700 paragraph-14">Taxas válidas pra quem vende a partir de R$ 2.000 por mês</p>
+    </div>
+    <div class="p-8 min-w-[616px] lg:min-w-[624px] bg-newTon-50 rounded-[8px]">
+      <p class="font-bold text-center text-newTon-700 paragraph-14">Sem mínimo de vendas</p>
+    </div>
+  </div>
+  <div class="flex flex-wrap gap-16 lg:gap-24 md:pb-0 md:pt-16 md:justify-start md:flex-nowrap justify-center w-full ">
+    <div class="md:hidden order-first p-8 w-full bg-newTon-50 rounded-[8px] max-w-[455px]">
+      <p class="font-bold text-center text-newTon-700 paragraph-14">Taxas válidas pra quem vende a partir de R$ 2.000 por mês</p>
+    </div>
+    <div class="md:hidden order-2 p-8 mt-8 w-full bg-newTon-50 rounded-[8px] max-w-[455px]">
+      <p class="font-bold text-center text-newTon-700 paragraph-14">Sem mínimo de vendas</p>
+    </div>
+
+    {% for promocao in site.data.maquininhas %}
+      <a href="#maquininhas" class="w-full max-w-[455px] md:max-w-[300px] order-0 ">
+        <label for="PlansSelect-promo" class="w-full cursor-pointer PlansSelect_label__41zTI">
+          <div class="flex flex-col justify-start p-16 md:w-[308px] rounded-md border h-full PlansSelect_planItem__oxJAF border-newTon-600">
+            <div class="flex flex-col mb-12 items-center">
+              <div class="flex justify-between w-full">
+                <div class="w-full max-w-[192px]">
+                  <div class="flex items-center">
+                    <input type="radio" name="PlansSelect" id="PlansSelect-promo" class="w-20 h-20 cursor-pointer" value="promo" checked="">
+                    <p class="ml-8 font-heading text-[24px] lg:text-[28px] font-bold leading-[32px] lg:leading-[36px] text-display-900">{{ promocao.nome }}</p>
+                  </div>
+                  <p class=" text-display-900 paragraph-14 lg:paragraph-16">{{ promocao.texto }}</p>
+                </div>
+                <div class="w-64 h-64">
+                  <div style="overflow: hidden; box-sizing: border-box; display: inline-block; position: relative; width: 64px; height: 64px;">
+                    <img alt="Icone Taxa Pix Qr Code" src="{{ site.base_url }}/assets/img/taxapixqrcode.png" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-8 w-full bg-display-100 rounded-t ">
+              <ul class="flex">
+                <li class="flex-1 text-center">
+                  <p class="text-[12px] font-bold leading-[18px] whitespace-nowrap">DÉBITO</p>
+                  <p id="btn-escolha-plano-promo-db" class=" font-heading text-[28px] font-bold leading-[36px] text-newTon-700">{{ promocao.debito }}</p>
+                </li>
+                <li class="flex-1 text-center">
+                  <p class="text-[12px] font-bold leading-[18px] whitespace-nowrap">CRÉDITO</p>
+                  <p id="btn-escolha-plano-promo-crav" class=" font-heading text-[28px] font-bold leading-[36px] text-newTon-700">{{ promocao.credito }}</p>
+                </li>
+                <li class="flex-1 text-center">
+                  <p class="text-[12px] font-bold leading-[18px] whitespace-nowrap">CRÉDITO 12X</p>
+                  <p id="btn-escolha-plano-promo-cr12x" class=" font-heading text-[28px] font-bold leading-[36px] text-newTon-700">{{ promocao.credito_12x }}</p>
+                </li>
+              </ul>
+            </div>
+            <div class="flex flex-col justify-center items-center p-8 bg-display-50 rounded-t-none rounded-b">
+              {% if promocao.promocional %}
+                <p class="text-display-900 paragraph-14">Taxas promocionais</p>
+              {% endif %}
+              {% if promocao.url_regulamento %}
+                <p class="text-display-900 rounded-b-[8px] paragraph-14">Confira o <a target="_blank" class="my-8 mb-4 text-newTon-700 underline paragraph-14" href="{{ promocao.url_regulamento }}">Regulamento</a></p>
+              {% endif %}
+            </div>
+          </div>
+        </label>
+      </a>
+    {% endfor %}
+
+  </div>
+</div>
