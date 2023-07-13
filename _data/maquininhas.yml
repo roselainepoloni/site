@@ -3,26 +3,33 @@
   promocional: true
   url_regulamento: https://documentos.ton.com.br/regulamento-promoton-tier.pdf
   debito: 0,85%
+  data-dropdown: dropdownpromo
   credito: 0,85%
   credito_12x: 9,89%
   maquinas:
   - nome: T1 Promo
-    valor: 0.00
-    valor_promocional: 0.00
+    valor: 198.80
+    valor_promocional: 106.80
+    valor_12x: 8
   - nome: T1 Chip Promo
-    valor: 0.00
-    valor_promocional: 0.00
+    valor: 318.80
+    valor_promocional: 286.80
+    valor_12x: 23
   - nome: T2+ Promo
-    valor: 0.00
-    valor_promocional: 0.00
+    valor: 478.80
+    valor_promocional: 190.80
+    valor_12x: 15
   - nome: T3 Promo
-    valor: 0.00
-    valor_promocional: 0.00
+    valor: 958.80
+    valor_promocional: 394.80
+    valor_12x: 32
   - nome: T3 Smart Promo
-    valor: 0.00
-    valor_promocional: 0.00
+    valor: 958.80
+    valor_promocional: 478.80
+    valor_12x: 39
 
 - nome: GigaTon
+  data-dropdown: dropdowngiga
   texto: Para quem vende mais no parcelado
   promocional: false
   url_regulamento: https://documentos.ton.com.br/regulamento-gigaton-tier.pdf
@@ -31,22 +38,27 @@
   credito_12x: 13,49%
   maquinas:
   - nome: T1 Giga
-    valor: 0.00
-    valor_promocional: 0.00
+    valor: 198.80
+    valor_promocional: 194.80
+    valor_12x: 7
   - nome: T1 Chip Giga
-    valor: 0.00
-    valor_promocional: 0.00
+    valor: 318.80
+    valor_promocional: 214.80
+    valor_12x: 17
   - nome: T2+ Giga
-    valor: 0.00
-    valor_promocional: 0.00
+    valor: 478.80
+    valor_promocional: 154.80
+    valor_12x: 12
   - nome: T3 Giga
-    valor: 0.00
-    valor_promocional: 0.00
+    valor: 958.80
+    valor_promocional: 382.80
+    valor_12x: 31
   - nome: T3 Smart Giga
-    valor: 0.00
-    valor_promocional: 0.00
-
+    valor: 958.80
+    valor_promocional: 466.80
+    valor_12x: 38
 - nome: MegaTon
+  data-dropdown: dropdownmega
   texto: Para quem vende muito à vista
   promocional: false
   debito: 1,69%
@@ -54,22 +66,28 @@
   credito_12x: 17,99%
   maquinas:
   - nome: T1 Mega
-    valor: 0.00
-    valor_promocional: 0.00
+    valor: 198.80
+    valor_promocional: 94.80
+    valor_12x: 7
   - nome: T1 Chip Mega
-    valor: 0.00
-    valor_promocional: 0.00
+    valor: 318.80
+    valor_promocional: 214.80
+    valor_12x: 17
   - nome: T2+ Mega
-    valor: 0.00
-    valor_promocional: 0.00
+    valor: 478.80
+    valor_promocional: 154.80
+    valor_12x: 12
   - nome: T3 Mega
-    valor: 0.00
-    valor_promocional: 0.00
+    valor: 958.80
+    valor_promocional: 382.80
+    valor_12x: 31
   - nome: T3 Smart Mega
-    valor: 0.00
-    valor_promocional: 0.00
+    valor: 958.80
+    valor_promocional: 466.80
+    valor_12x: 38
 
 - nome: Ton Básico
+  data-dropdown: dropdownton
   texto: Maquinas com os melhores preços
   promocional: false
   debito: 1,99%
@@ -77,17 +95,22 @@
   credito_12x: 22,59%
   maquinas:
   - nome: T1 Básico
-    valor: 0.00
-    valor_promocional: 0.00
+    valor: 198.80
+    valor_promocional: 22.80
+    valor_12x: 1
   - nome: T1 Chip Básico
-    valor: 0.00
-    valor_promocional: 0.00
+    valor: 318.80
+    valor_promocional: 142.80
+    valor_12x: 11
   - nome: T2+ Básico
-    valor: 0.00
-    valor_promocional: 0.00
+    valor: 478.80
+    valor_promocional: 118.80
+    valor_12x: 9
   - nome: T3 Básico
-    valor: 0.00
-    valor_promocional: 0.00
+    valor: 958.80
+    valor_promocional: 238.80
+    valor_12x: 19
   - nome: T3 Smart Básico
-    valor: 0.00
-    valor_promocional: 0.00
+    valor: 958.80
+    valor_promocional: 358.80
+    valor_12x: 29
