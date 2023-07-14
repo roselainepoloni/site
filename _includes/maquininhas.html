@@ -5,187 +5,186 @@
   </div>
 </div>
 
-  <div class="flex text-sm space-x-12 justify-center text-center w-full px-12 mt-4">
-    <div class="bg-[rgb(209,255,219)] text-[rgb(0,148,32)] font-semibold p-2 rounded-xl w-1/3">
-      <h1>Taxas válidas pra quem vende a partir de R$ 2.000 por mês</h1>
-    </div>
-    <div class="bg-[rgb(209,255,219)] text-[rgb(0,148,32)] font-semibold p-2 rounded-xl w-1/3">
-      <h1>Sem mínimo de vendas</h1>
-    </div>
+<div class="flex text-sm space-x-12 justify-center text-center w-full px-12 mt-4">
+  <div class="bg-[rgb(209,255,219)] text-[rgb(0,148,32)] font-semibold p-2 rounded-xl w-1/3">
+    <h1>Taxas válidas pra quem vende a partir de R$ 2.000 por mês</h1>
   </div>
+  <div class="bg-[rgb(209,255,219)] text-[rgb(0,148,32)] font-semibold p-2 rounded-xl w-1/3">
+    <h1>Sem mínimo de vendas</h1>
+  </div>
+</div>
 
-    <div class="flex flex-col justify-center items-center md:flex-row h-auto">
-      {% for promocao in site.data.maquininhas %}
-        <div class="flex">
-          <div role="presentation">
-            <button class="mb-6 lg:mb-0"
-                    id="dropdownDefaultButton"
-                    data-dropdown-toggle="{{promocao.data-dropdown}}"
-                    type="button">
 
-              <div class="rounded-lg bg-white hover:shadow-lg border border-gray-200 m-2 hover:border-green-300 p-1">
-                <div class="p-2">
-                  <div class="flex justify-between items-center">
-                    <h2 class="mb-4 text-3xl text-initial">
-                      <strong>{{promocao.nome}}</strong>
-                    </h2>
-                    <img class="w-16" alt="Icone Taxa Pix Qr Code" src="{{ site.base_url }}/assets/img/taxapixqrcode.png">
-                  </div>
-                  <p class="mb-4 mt-4">
-                    {{promocao.texto}}
-                  </p>
-                  <div class="bg-gray-100 rounded-lg p-3">
-                    <ul>
-                      <div class="flex justify-center space-x-4 text-center uppercase">
-                        <l1>
-                          <h1 class="font-bold text-xs">DÉBITO</h1>
-                          <p class="text-2xl text-[rgb(0,148,32)] font-bold">{{promocao.debito}}</p>
-                        </l1>
-                        <l1>
-                          <h1 class="font-bold text-xs">CRÉDITO</h1>
-                          <p class="text-2xl text-[rgb(0,148,32)] font-bold">{{promocao.credito}}</p>
-                        </l1>
-                        <l1>
-                          <h1 class="font-bold text-xs whitespace-nowrap ">CRÉDITO 12x</h1>
-                          <p class="text-2xl text-[rgb(0,148,32)] font-bold">{{promocao.credito_12x}}</p>
-                        </l1>
-                      </div>
-                    </ul>
-                  </div>
-                  <div class="bg-gray-50 rounded-t-none rounded-b items-center justify-center -mt-2">
-                    <p>Taxas promocionais</p>
-                    <p>Confira o Regulamento</p>
-                  </div>
+<div class="flex flex-col justify-center items-center md:flex-row h-auto">
+    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+    {% for promocao in site.data.maquininhas %}
+    <li class="mr-2" role="presentation">
+      <button class="mb-6 lg:mb-0" id="{{ promocao.id }}-tab" data-tabs-target="#{{ promocao.id }}" type="button" role="tab" aria-controls="{{ promocao.id }}" aria-selected="false">
+        <div class="rounded-lg bg-white hover:shadow-lg border border-gray-200 m-2 hover:border-green-300 p-1">
+          <div class="p-2">
+            <div class="flex justify-between items-center">
+              <h2 class="mb-4 text-3xl text-initial">
+                <strong>{{promocao.nome}}</strong>
+              </h2>
+              <img class="w-16" alt="Icone Taxa Pix Qr Code" src="{{ site.base_url }}/assets/img/taxapixqrcode.png">
+            </div>
+            <p class="mb-4 mt-4">
+              {{promocao.texto}}
+            </p>
+            <div class="bg-gray-100 rounded-lg p-3">
+              <ul>
+                <div class="flex justify-center space-x-4 text-center uppercase">
+                  <l1>
+                    <h1 class="font-bold text-xs">DÉBITO</h1>
+                    <p class="text-2xl text-[rgb(0,148,32)] font-bold">{{promocao.debito}}</p>
+                  </l1>
+                  <l1>
+                    <h1 class="font-bold text-xs">CRÉDITO</h1>
+                    <p class="text-2xl text-[rgb(0,148,32)] font-bold">{{promocao.credito}}</p>
+                  </l1>
+                  <l1>
+                    <h1 class="font-bold text-xs whitespace-nowrap ">CRÉDITO 12x</h1>
+                    <p class="text-2xl text-[rgb(0,148,32)] font-bold">{{promocao.credito_12x}}</p>
+                  </l1>
                 </div>
-              </div>
-            </button>
-          </div>
-        </div>
-        <div id="{{promocao.data-dropdown}}" class="z-10 hidden bg-white w-full">
-          <div class="p-4 rounded-lg mt-12" aria-labelledby="dropdownDefaultButton">
-            <div class="container mx-auto md:px-2">
-              <section>
-                <div class="grid gap-6 lg:grid-cols-5 lg:gap-x-12">
-                  {% for maquina in promocao.maquinas %}
-                    <div class="mb-6 lg:mb-0">
-                      <div
-                        class="block h-full rounded-lg bg-white">
-                        <div class="p-6 text-center">
-                          <div class="flex items-center">
-                            <img class="w-30 absolute mb-12 -ml-4 h-[200px]" src="{{ site.base_url }}{{maquina.foto}}">
-                            <div class="flex relative ml-32">
-                              {% if maquina.promocao2 == "none" %}
-                                <img class="w-16 mb-12 mb-6" src="{{ site.base_url }}{{maquina.observacao}}">
-                              {% endif %}
-                              <img class="w-16 mb-12 mb-6" src="{{ site.base_url }}{{maquina.observacao}}">
-                              <img class="w-16 mb-12 mb-6 -ml-4" src="{{ site.base_url }}{{maquina.observacao2}}">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="p-6">
-                          <h1 class="uppercase text-2xl">{{maquina.nome}}</h1>
-                          <div class="flex justify-between">
-                            <div>
-                              <p class="line-through">R$ {{maquina.valor}}</p>
-                              <p class="font-semibold ">R$ {{maquina.valor_promocional}}</p>
-                              <p>à vista ou</p>
-                            </div>
-                            <div class="flex justify-end my-auto ml-auto font-heading font-bold text-newTon-700 paragraph-14 md:paragraph-16">
-                              <div class="self-end mr-2 text-right">
-                                <p class="leading-none text-display-900 paragraph-18">12x</p>
-                                <p class="mt-1 leading-none text-[rgb(0,148,32)] paragraph-18">R$</p>
-                              </div>
-                              <p class="self-end text-[78px] leading-[58px] text-[rgb(0,148,32)]">{{maquina.valor_12x}}</p>
-                              <p class="leading-[20px] text-[rgb(0,148,32)] paragraph-18">,90</p>
-                            </div>
-                          </div>
-
-                          <div class="bg-[rgb(209,255,219)] rounded-lg border-2 border-green-300 border-dashed p-1 my-2 flex">
-                            <p class="text-initial p-2 w-auto">Receba <b>100% de Cashback</b> da sua 1ª maquininha ao atingir R$ 10 mil em vendas </p>
-                          </div>
-                          <div class="flex justify-center mb-2">
-                            <button class="bg-[rgb(0,235,51)] p-4 rounded-full w-full hover:ring-green-300 hover:ring-2 hover:bg-opacity-80">
-                              <p class="font-bold">Pedir {{maquina.nome}}</p>
-                            </button>
-                          </div>
-
-                          <div class="flex justify-center">
-                            <ol class="list-inside">
-                              <li class="flex mt-16 first:mt-0 list-none items-center">
-                                <div class="min-w-[24px] max-w-[24px] min-h-[24px] max-h-[24px]">
-                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-current text-newTon-700">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3C0 2.44772 0.447715 2 1 2H16C16.5523 2 17 2.44772 17 3V16C17 16.5523 16.5523 17 16 17H1C0.447715 17 0 16.5523 0 16V3ZM2 4V15H15V4H2Z"></path>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15 8C15 7.44772 15.4477 7 16 7H20C20.2652 7 20.5196 7.10536 20.7071 7.29289L23.7071 10.2929C23.8946 10.4804 24 10.7348 24 11V16C24 16.5523 23.5523 17 23 17H16C15.4477 17 15 16.5523 15 16V8ZM17 9V15H22V11.4142L19.5858 9H17Z"></path>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 17C4.67157 17 4 17.6716 4 18.5C4 19.3284 4.67157 20 5.5 20C6.32843 20 7 19.3284 7 18.5C7 17.6716 6.32843 17 5.5 17ZM2 18.5C2 16.567 3.567 15 5.5 15C7.433 15 9 16.567 9 18.5C9 20.433 7.433 22 5.5 22C3.567 22 2 20.433 2 18.5Z"></path>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M18.5 17C17.6716 17 17 17.6716 17 18.5C17 19.3284 17.6716 20 18.5 20C19.3284 20 20 19.3284 20 18.5C20 17.6716 19.3284 17 18.5 17ZM15 18.5C15 16.567 16.567 15 18.5 15C20.433 15 22 16.567 22 18.5C22 20.433 20.433 22 18.5 22C16.567 22 15 20.433 15 18.5Z"></path>
-                                  </svg>
-                                </div>
-                                <p class="ml-4 font-medium paragraph-14 text-newTon-700">Frete e troca grátis pra todo o Brasil</p>
-                              </li>
-                              <li class=" flex mt-4 first:mt-0 list-none">
-                                <div class="min-w-[24px] max-w-[24px] min-h-[24px] max-h-[24px]">
-                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-current undefined"><g clip-path="url(#clip0_47_1085)">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V12H12V16C12 16.2457 12.2251 16.7373 13.2045 17.2269C14.1241 17.6868 15.4646 18 17 18C18.5354 18 19.8759 17.6868 20.7955 17.2269C21.7749 16.7373 22 16.2457 22 16V12H24V16C24 17.4113 22.8821 18.4197 21.69 19.0158C20.4381 19.6417 18.7786 20 17 20C15.2214 20 13.5619 19.6417 12.31 19.0158C11.1179 18.4197 10 17.4113 10 16Z"></path>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20V16H12V20C12 20.2457 12.2251 20.7373 13.2045 21.2269C14.1241 21.6868 15.4646 22 17 22C18.5354 22 19.8759 21.6868 20.7955 21.2269C21.7749 20.7373 22 20.2457 22 20V16H24V20C24 21.4113 22.8821 22.4197 21.69 23.0158C20.4381 23.6417 18.7786 24 17 24C15.2214 24 13.5619 23.6417 12.31 23.0158C11.1179 22.4197 10 21.4113 10 20Z"></path>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2046 10.7731C12.2251 11.2628 12 11.7544 12 12C12 12.2456 12.2251 12.7372 13.2046 13.2269C14.1242 13.6867 15.4647 14 17 14C18.5353 14 19.8758 13.6867 20.7954 13.2269C21.7749 12.7372 22 12.2456 22 12C22 11.7544 21.7749 11.2628 20.7954 10.7731C19.8758 10.3133 18.5353 10 17 10C15.4647 10 14.1242 10.3133 13.2046 10.7731ZM12.3101 8.98425C13.5621 8.3583 15.2216 8 17 8C18.7784 8 20.4379 8.3583 21.6899 8.98425C22.8819 9.5803 24 10.5887 24 12C24 13.4113 22.8819 14.4197 21.6899 15.0157C20.4379 15.6417 18.7784 16 17 16C15.2216 16 13.5621 15.6417 12.3101 15.0157C11.1181 14.4197 10 13.4113 10 12C10 10.5887 11.1181 9.5803 12.3101 8.98425Z"></path>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9 4V9H4V7H7V4H9Z"></path>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14H9V16H8C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C11.6255 0 14.6858 2.41145 15.6685 5.71596L15.9536 6.67448L14.0365 7.24455L13.7515 6.28604C13.0142 3.80655 10.7165 2 8 2Z"></path></g><defs><clipPath id="clip0_47_1085"><rect width="24" height="24" fill="white"></rect></clipPath></defs>
-                                  </svg>
-                                </div>
-                                <p class="ml-4 font-medium paragraph-14 ">Receba suas vendas em 1 dia útil</p>
-                              </li>
-                              <li class=" flex mt-4 first:mt-0 list-none">
-                                <div class="min-w-[24px] max-w-[24px] min-h-[24px] max-h-[24px]">
-                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-current undefined">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.04 11.0021C9.70148 11.0021 7.4369 11.8217 5.64003 13.3183C5.21566 13.6718 4.58511 13.6143 4.23165 13.19C3.87819 12.7656 3.93566 12.135 4.36003 11.7816C6.51628 9.98558 9.23378 9.00208 12.04 9.00208C14.8463 9.00208 17.5638 9.98558 19.72 11.7816C20.1444 12.135 20.2019 12.7656 19.8484 13.19C19.4949 13.6143 18.8644 13.6718 18.44 13.3183C16.6431 11.8217 14.3786 11.0021 12.04 11.0021Z"></path>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0001 6.00269C8.34783 6.00269 4.82108 7.33517 2.08131 9.7502C1.667 10.1154 1.03509 10.0756 0.669891 9.66129C0.304692 9.24698 0.344501 8.61507 0.758806 8.24987C3.86388 5.51283 7.86087 4.00269 12.0001 4.00269C16.1392 4.00269 20.1362 5.51283 23.2413 8.24987C23.6556 8.61507 23.6954 9.24698 23.3302 9.66129C22.965 10.0756 22.3331 10.1154 21.9188 9.7502C19.179 7.33517 15.6523 6.00269 12.0001 6.00269Z"></path>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.005 16.0012C10.9672 16.0012 9.95516 16.3241 9.10915 16.9252C8.65893 17.245 8.03464 17.1394 7.71478 16.6891C7.39491 16.2389 7.50059 15.6146 7.95082 15.2948C9.13522 14.4533 10.5521 14.0012 12.005 14.0012C13.4579 14.0012 14.8748 14.4533 16.0592 15.2948C16.5094 15.6146 16.6151 16.2389 16.2952 16.6891C15.9753 17.1394 15.351 17.245 14.9008 16.9252C14.0548 16.3241 13.0428 16.0012 12.005 16.0012Z"></path>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C11 19.4477 11.4477 19 12 19H12.01C12.5623 19 13.01 19.4477 13.01 20C13.01 20.5523 12.5623 21 12.01 21H12C11.4477 21 11 20.5523 11 20Z"></path>
-                                  </svg>
-                                </div>
-                                <p class="ml-4 font-medium paragraph-14 ">Com Chip 3G e Wi-Fi</p>
-                              </li>
-                              <li class=" flex mt-4 first:mt-0 list-none">
-                                <div class="min-w-[24px] max-w-[24px] min-h-[24px] max-h-[24px]">
-                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-current undefined"><g clip-path="url(#clip0_47_1062)">
-                                    <path d="M3.82848 16.4791C3.62881 16.4791 3.42914 16.3792 3.22947 16.2793C2.83013 15.9797 2.73029 15.2807 3.0298 14.8812C3.62881 13.9823 4.02815 12.9837 4.02815 11.8851C4.02815 10.7865 3.72864 9.78782 3.0298 8.889C2.73029 8.58939 2.83013 7.99017 3.22947 7.69056C3.62881 7.39095 4.32765 7.49082 4.62716 7.8903C5.52568 9.08874 6.02485 10.5868 6.02485 11.985C6.02485 13.483 5.52568 14.8812 4.62716 16.0796C4.42749 16.3792 4.12798 16.4791 3.82848 16.4791Z"></path>
-                                    <path d="M8.32101 18.876C8.12134 18.876 7.92167 18.876 7.82184 18.6763C7.32266 18.3767 7.22283 17.7775 7.52233 17.2781C8.52068 15.6802 9.01986 13.8826 9.01986 11.985C9.01986 10.0875 8.52068 8.28986 7.52233 6.69195C7.12299 6.1926 7.32266 5.59338 7.722 5.29377C8.22118 4.99417 8.82019 5.09403 9.11969 5.59338C10.3177 7.4909 11.0166 9.68804 11.0166 11.985C11.0166 14.282 10.4176 16.4792 9.11969 18.3767C8.92002 18.6763 8.62052 18.876 8.32101 18.876Z"></path>
-                                    <path d="M12.7138 21.1731C12.5141 21.1731 12.3144 21.1731 12.2146 21.0732C11.7154 20.7736 11.6156 20.1744 11.9151 19.675C13.3128 17.378 14.0116 14.6815 14.0116 11.9851C14.0116 9.28858 13.3128 6.69197 11.9151 4.39497C11.6156 3.89562 11.7154 3.2964 12.2146 2.9968C12.7138 2.69719 13.3128 2.89693 13.6123 3.2964C15.2096 5.89301 16.0083 8.8891 16.0083 11.9851C16.0083 15.081 15.2096 18.0771 13.6123 20.6737C13.4126 20.9733 13.0133 21.1731 12.7138 21.1731Z"></path>
-                                    <path d="M17.2064 23.47C17.0067 23.47 16.9068 23.47 16.7072 23.3701C16.208 23.0705 16.1082 22.4713 16.3078 21.972C18.1049 18.9759 19.0034 15.4804 19.0034 11.985C19.0034 8.48957 18.1049 4.99414 16.3078 1.99805C16.0083 1.4987 16.208 0.899485 16.7072 0.599877C17.2064 0.300268 17.8054 0.500007 18.1049 0.999355C20.0017 4.29505 21.0001 8.09009 21.0001 11.985C21.0001 15.78 20.0017 19.5751 18.1049 22.9707C17.8054 23.2703 17.5059 23.47 17.2064 23.47Z"></path></g><defs><clipPath id="clip0_47_1062"><rect width="18.17" height="22.97" fill="white" transform="translate(2.83008 0.5)"></rect></clipPath></defs>
-                                  </svg>
-                                </div>
-                                <p class="ml-4 font-medium paragraph-14 ">Receba por aproximação (NFC)</p>
-                              </li>
-                              <li class=" flex mt-4 first:mt-0 list-none">
-                                <div class="min-w-[24px] max-w-[24px] min-h-[24px] max-h-[24px]">
-                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-current undefined">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1H24V18H13.3205L5 23.9432V18H0V9H13V11H2V16H7V20.0568L12.6795 16H22V3H2V7H0V1Z"></path>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 5.58578L14.4142 10L10 14.4142L8.58582 13L11.5858 10L8.58582 7L10 5.58578Z"></path>
-                                  </svg>
-                                </div>
-                                <p class="ml-4 font-medium paragraph-14 ">Comprovante por SMS</p>
-                              </li>
-                              <li class=" flex mt-4 first:mt-0 list-none">
-                                <div class="min-w-[24px] max-w-[24px] min-h-[24px] max-h-[24px]">
-                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-current undefined">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6 2C5.73478 2 5.48043 2.10536 5.29289 2.29289C5.10536 2.48043 5 2.73478 5 3V21C5 21.2652 5.10536 21.5196 5.29289 21.7071C5.48043 21.8946 5.73478 22 6 22H18C18.2652 22 18.5196 21.8946 18.7071 21.7071C18.8946 21.5196 19 21.2652 19 21V3C19 2.73478 18.8946 2.48043 18.7071 2.29289C18.5196 2.10536 18.2652 2 18 2H6ZM3.87868 0.87868C4.44129 0.316071 5.20435 0 6 0H18C18.7956 0 19.5587 0.316071 20.1213 0.87868C20.6839 1.44129 21 2.20435 21 3V21C21 21.7957 20.6839 22.5587 20.1213 23.1213C19.5587 23.6839 18.7957 24 18 24H6C5.20435 24 4.44129 23.6839 3.87868 23.1213C3.31607 22.5587 3 21.7957 3 21V3C3 2.20435 3.31607 1.44129 3.87868 0.87868Z"></path>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13 4V20H11V4H13Z"></path>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3321 5.49306C12.9743 5.37538 14.8534 5.79118 15.8567 6.34266L16.733 6.82435L15.7696 8.57704L14.8933 8.09535C14.2756 7.75583 12.7912 7.39363 11.4751 7.48795C10.8254 7.53451 10.3421 7.68505 10.0473 7.89289C9.80616 8.06288 9.64798 8.29339 9.64798 8.732C9.64798 9.28335 9.85957 9.60954 10.2524 9.89759C10.713 10.2353 11.3701 10.4762 12.2062 10.7548C12.2647 10.7743 12.3243 10.7941 12.385 10.8142C13.1116 11.0548 13.9784 11.3418 14.6605 11.7814C15.4703 12.3032 16.132 13.1117 16.132 14.351C16.132 15.3986 15.7813 16.2674 15.115 16.8974C14.4751 17.5024 13.6378 17.799 12.8088 17.9235C11.166 18.1704 9.20604 17.7962 7.66168 17.241L6.72064 16.9027L7.39724 15.0207L8.33828 15.359C9.71192 15.8528 11.3179 16.1251 12.5116 15.9457C13.1009 15.8572 13.4994 15.6725 13.7409 15.4441C13.9559 15.2409 14.132 14.9244 14.132 14.351C14.132 13.9693 13.9831 13.7241 13.5772 13.4626C13.1175 13.1663 12.4825 12.9549 11.6652 12.6827C11.635 12.6726 11.6045 12.6624 11.5738 12.6522C10.7889 12.3906 9.82498 12.0642 9.06979 11.5105C8.24688 10.9071 7.64798 10.0177 7.64798 8.732C7.64798 7.63612 8.12805 6.79887 8.89494 6.25825C9.60815 5.75546 10.5027 5.5525 11.3321 5.49306Z"></path>
-                                  </svg>
-                                </div>
-                                <p class="ml-4 font-medium paragraph-14 ">Venda pelo App com TapTon, Link, Pix e Boleto</p>
-                              </li>
-                            </ol>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  {% endfor %}
-                </div>
-              </section>
+              </ul>
+            </div>
+            <div class="bg-gray-50 rounded-t-none rounded-b items-center justify-center -mt-2">
+              {% if promocao.promocional %}
+                <p>Taxas promocionais</p>
+              {% endif %}
+              {% if promocao.url_regulamento %}
+                <a class="hover:underline" href="{{ promocao.url_regulamento }}" target="_blank">Confira o Regulamento</a>
+              {% endif %}
             </div>
           </div>
         </div>
-      {% endfor %}
+      </button>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+<div id="myTabContent">
+  {% for promocao in site.data.maquininhas %}
+    <div class="hidden container mx-auto md:px-2" id="{{ promocao.id }}" role="tabpanel" aria-labelledby="{{ promocao.id }}-tab">
+      <section>
+        <div class="grid gap-6 lg:grid-cols-5 lg:gap-x-12">
+          {% for maquina in promocao.maquinas %}
+            <div class="mb-6 lg:mb-0">
+              <div
+                class="block h-full rounded-lg bg-white">
+                <div class="p-6 text-center">
+                  <div class="flex items-center">
+                    <img class="w-30 absolute mb-12 -ml-4 h-[200px]" src="{{ site.base_url }}{{maquina.foto}}">
+                    <div class="flex relative ml-32">
+                      <img class="w-16 mb-12 mb-6" src="{{ site.base_url }}{{maquina.observacao}}">
+                      {% if maquina.observacao2 != "none" %}
+                      <img class="w-16 mb-12 mb-6 -ml-4" src="{{ site.base_url }}{{maquina.observacao2}}">
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h1 class="uppercase text-2xl">{{maquina.nome}}</h1>
+                  <div class="flex justify-between whitespace-nowrap">
+                    <div>
+                      <p class="line-through">R$ {{maquina.valor}}</p>
+                      <p class="font-semibold">R$ {{maquina.valor_promocional}}</p>
+                      <p>à vista ou</p>
+                    </div>
+                    <div class="flex justify-end my-auto ml-auto font-heading font-bold text-newTon-700 paragraph-14 md:paragraph-16">
+                      <div class="self-end mr-2 text-right">
+                        <p class="leading-none text-display-900 paragraph-18">12x</p>
+                        <p class="mt-1 leading-none text-[rgb(0,148,32)] paragraph-18">R$</p>
+                      </div>
+                      <p class="self-end text-[78px] leading-[58px] text-[rgb(0,148,32)]">{{maquina.valor_12x}}</p>
+                      <p class="leading-[20px] text-[rgb(0,148,32)] paragraph-18">,90</p>
+                    </div>
+                  </div>
+
+                  <div class="bg-[rgb(209,255,219)] rounded-lg border-2 border-green-300 border-dashed p-1 my-2 flex">
+                    <p class="text-initial p-2 w-auto">Receba <b>100% de Cashback</b> da sua 1ª maquininha ao atingir R$ 10 mil em vendas </p>
+                  </div>
+                  <div class="flex justify-center mb-2">
+                    <button class="bg-[rgb(0,235,51)] p-4 rounded-full w-full hover:ring-green-300 hover:ring-2 hover:bg-opacity-80">
+                      <p class="font-bold">Pedir {{maquina.nome}}</p>
+                    </button>
+                  </div>
+
+                  <div class="flex justify-center">
+                    <ol class="list-inside">
+                      <li class="flex mt-16 first:mt-0 list-none items-center">
+                        <div class="min-w-[24px] max-w-[24px] min-h-[24px] max-h-[24px]">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-current text-newTon-700">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3C0 2.44772 0.447715 2 1 2H16C16.5523 2 17 2.44772 17 3V16C17 16.5523 16.5523 17 16 17H1C0.447715 17 0 16.5523 0 16V3ZM2 4V15H15V4H2Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15 8C15 7.44772 15.4477 7 16 7H20C20.2652 7 20.5196 7.10536 20.7071 7.29289L23.7071 10.2929C23.8946 10.4804 24 10.7348 24 11V16C24 16.5523 23.5523 17 23 17H16C15.4477 17 15 16.5523 15 16V8ZM17 9V15H22V11.4142L19.5858 9H17Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 17C4.67157 17 4 17.6716 4 18.5C4 19.3284 4.67157 20 5.5 20C6.32843 20 7 19.3284 7 18.5C7 17.6716 6.32843 17 5.5 17ZM2 18.5C2 16.567 3.567 15 5.5 15C7.433 15 9 16.567 9 18.5C9 20.433 7.433 22 5.5 22C3.567 22 2 20.433 2 18.5Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.5 17C17.6716 17 17 17.6716 17 18.5C17 19.3284 17.6716 20 18.5 20C19.3284 20 20 19.3284 20 18.5C20 17.6716 19.3284 17 18.5 17ZM15 18.5C15 16.567 16.567 15 18.5 15C20.433 15 22 16.567 22 18.5C22 20.433 20.433 22 18.5 22C16.567 22 15 20.433 15 18.5Z"></path>
+                          </svg>
+                        </div>
+                        <p class="ml-4 font-medium paragraph-14 text-newTon-700">Frete e troca grátis pra todo o Brasil</p>
+                      </li>
+                      <li class=" flex mt-4 first:mt-0 list-none">
+                        <div class="min-w-[24px] max-w-[24px] min-h-[24px] max-h-[24px]">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-current undefined"><g clip-path="url(#clip0_47_1085)">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 16V12H12V16C12 16.2457 12.2251 16.7373 13.2045 17.2269C14.1241 17.6868 15.4646 18 17 18C18.5354 18 19.8759 17.6868 20.7955 17.2269C21.7749 16.7373 22 16.2457 22 16V12H24V16C24 17.4113 22.8821 18.4197 21.69 19.0158C20.4381 19.6417 18.7786 20 17 20C15.2214 20 13.5619 19.6417 12.31 19.0158C11.1179 18.4197 10 17.4113 10 16Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20V16H12V20C12 20.2457 12.2251 20.7373 13.2045 21.2269C14.1241 21.6868 15.4646 22 17 22C18.5354 22 19.8759 21.6868 20.7955 21.2269C21.7749 20.7373 22 20.2457 22 20V16H24V20C24 21.4113 22.8821 22.4197 21.69 23.0158C20.4381 23.6417 18.7786 24 17 24C15.2214 24 13.5619 23.6417 12.31 23.0158C11.1179 22.4197 10 21.4113 10 20Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2046 10.7731C12.2251 11.2628 12 11.7544 12 12C12 12.2456 12.2251 12.7372 13.2046 13.2269C14.1242 13.6867 15.4647 14 17 14C18.5353 14 19.8758 13.6867 20.7954 13.2269C21.7749 12.7372 22 12.2456 22 12C22 11.7544 21.7749 11.2628 20.7954 10.7731C19.8758 10.3133 18.5353 10 17 10C15.4647 10 14.1242 10.3133 13.2046 10.7731ZM12.3101 8.98425C13.5621 8.3583 15.2216 8 17 8C18.7784 8 20.4379 8.3583 21.6899 8.98425C22.8819 9.5803 24 10.5887 24 12C24 13.4113 22.8819 14.4197 21.6899 15.0157C20.4379 15.6417 18.7784 16 17 16C15.2216 16 13.5621 15.6417 12.3101 15.0157C11.1181 14.4197 10 13.4113 10 12C10 10.5887 11.1181 9.5803 12.3101 8.98425Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9 4V9H4V7H7V4H9Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14H9V16H8C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C11.6255 0 14.6858 2.41145 15.6685 5.71596L15.9536 6.67448L14.0365 7.24455L13.7515 6.28604C13.0142 3.80655 10.7165 2 8 2Z"></path></g><defs><clipPath id="clip0_47_1085"><rect width="24" height="24" fill="white"></rect></clipPath></defs>
+                          </svg>
+                        </div>
+                        <p class="ml-4 font-medium paragraph-14 ">Receba suas vendas em 1 dia útil</p>
+                      </li>
+                      <li class=" flex mt-4 first:mt-0 list-none">
+                        <div class="min-w-[24px] max-w-[24px] min-h-[24px] max-h-[24px]">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-current undefined">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.04 11.0021C9.70148 11.0021 7.4369 11.8217 5.64003 13.3183C5.21566 13.6718 4.58511 13.6143 4.23165 13.19C3.87819 12.7656 3.93566 12.135 4.36003 11.7816C6.51628 9.98558 9.23378 9.00208 12.04 9.00208C14.8463 9.00208 17.5638 9.98558 19.72 11.7816C20.1444 12.135 20.2019 12.7656 19.8484 13.19C19.4949 13.6143 18.8644 13.6718 18.44 13.3183C16.6431 11.8217 14.3786 11.0021 12.04 11.0021Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0001 6.00269C8.34783 6.00269 4.82108 7.33517 2.08131 9.7502C1.667 10.1154 1.03509 10.0756 0.669891 9.66129C0.304692 9.24698 0.344501 8.61507 0.758806 8.24987C3.86388 5.51283 7.86087 4.00269 12.0001 4.00269C16.1392 4.00269 20.1362 5.51283 23.2413 8.24987C23.6556 8.61507 23.6954 9.24698 23.3302 9.66129C22.965 10.0756 22.3331 10.1154 21.9188 9.7502C19.179 7.33517 15.6523 6.00269 12.0001 6.00269Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.005 16.0012C10.9672 16.0012 9.95516 16.3241 9.10915 16.9252C8.65893 17.245 8.03464 17.1394 7.71478 16.6891C7.39491 16.2389 7.50059 15.6146 7.95082 15.2948C9.13522 14.4533 10.5521 14.0012 12.005 14.0012C13.4579 14.0012 14.8748 14.4533 16.0592 15.2948C16.5094 15.6146 16.6151 16.2389 16.2952 16.6891C15.9753 17.1394 15.351 17.245 14.9008 16.9252C14.0548 16.3241 13.0428 16.0012 12.005 16.0012Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11 20C11 19.4477 11.4477 19 12 19H12.01C12.5623 19 13.01 19.4477 13.01 20C13.01 20.5523 12.5623 21 12.01 21H12C11.4477 21 11 20.5523 11 20Z"></path>
+                          </svg>
+                        </div>
+                        <p class="ml-4 font-medium paragraph-14 ">Com Chip 3G e Wi-Fi</p>
+                      </li>
+                      <li class=" flex mt-4 first:mt-0 list-none">
+                        <div class="min-w-[24px] max-w-[24px] min-h-[24px] max-h-[24px]">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-current undefined"><g clip-path="url(#clip0_47_1062)">
+                            <path d="M3.82848 16.4791C3.62881 16.4791 3.42914 16.3792 3.22947 16.2793C2.83013 15.9797 2.73029 15.2807 3.0298 14.8812C3.62881 13.9823 4.02815 12.9837 4.02815 11.8851C4.02815 10.7865 3.72864 9.78782 3.0298 8.889C2.73029 8.58939 2.83013 7.99017 3.22947 7.69056C3.62881 7.39095 4.32765 7.49082 4.62716 7.8903C5.52568 9.08874 6.02485 10.5868 6.02485 11.985C6.02485 13.483 5.52568 14.8812 4.62716 16.0796C4.42749 16.3792 4.12798 16.4791 3.82848 16.4791Z"></path>
+                            <path d="M8.32101 18.876C8.12134 18.876 7.92167 18.876 7.82184 18.6763C7.32266 18.3767 7.22283 17.7775 7.52233 17.2781C8.52068 15.6802 9.01986 13.8826 9.01986 11.985C9.01986 10.0875 8.52068 8.28986 7.52233 6.69195C7.12299 6.1926 7.32266 5.59338 7.722 5.29377C8.22118 4.99417 8.82019 5.09403 9.11969 5.59338C10.3177 7.4909 11.0166 9.68804 11.0166 11.985C11.0166 14.282 10.4176 16.4792 9.11969 18.3767C8.92002 18.6763 8.62052 18.876 8.32101 18.876Z"></path>
+                            <path d="M12.7138 21.1731C12.5141 21.1731 12.3144 21.1731 12.2146 21.0732C11.7154 20.7736 11.6156 20.1744 11.9151 19.675C13.3128 17.378 14.0116 14.6815 14.0116 11.9851C14.0116 9.28858 13.3128 6.69197 11.9151 4.39497C11.6156 3.89562 11.7154 3.2964 12.2146 2.9968C12.7138 2.69719 13.3128 2.89693 13.6123 3.2964C15.2096 5.89301 16.0083 8.8891 16.0083 11.9851C16.0083 15.081 15.2096 18.0771 13.6123 20.6737C13.4126 20.9733 13.0133 21.1731 12.7138 21.1731Z"></path>
+                            <path d="M17.2064 23.47C17.0067 23.47 16.9068 23.47 16.7072 23.3701C16.208 23.0705 16.1082 22.4713 16.3078 21.972C18.1049 18.9759 19.0034 15.4804 19.0034 11.985C19.0034 8.48957 18.1049 4.99414 16.3078 1.99805C16.0083 1.4987 16.208 0.899485 16.7072 0.599877C17.2064 0.300268 17.8054 0.500007 18.1049 0.999355C20.0017 4.29505 21.0001 8.09009 21.0001 11.985C21.0001 15.78 20.0017 19.5751 18.1049 22.9707C17.8054 23.2703 17.5059 23.47 17.2064 23.47Z"></path></g><defs><clipPath id="clip0_47_1062"><rect width="18.17" height="22.97" fill="white" transform="translate(2.83008 0.5)"></rect></clipPath></defs>
+                          </svg>
+                        </div>
+                        <p class="ml-4 font-medium paragraph-14 ">Receba por aproximação (NFC)</p>
+                      </li>
+                      <li class=" flex mt-4 first:mt-0 list-none">
+                        <div class="min-w-[24px] max-w-[24px] min-h-[24px] max-h-[24px]">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-current undefined">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1H24V18H13.3205L5 23.9432V18H0V9H13V11H2V16H7V20.0568L12.6795 16H22V3H2V7H0V1Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 5.58578L14.4142 10L10 14.4142L8.58582 13L11.5858 10L8.58582 7L10 5.58578Z"></path>
+                          </svg>
+                        </div>
+                        <p class="ml-4 font-medium paragraph-14 ">Comprovante por SMS</p>
+                      </li>
+                      <li class=" flex mt-4 first:mt-0 list-none">
+                        <div class="min-w-[24px] max-w-[24px] min-h-[24px] max-h-[24px]">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-current undefined">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6 2C5.73478 2 5.48043 2.10536 5.29289 2.29289C5.10536 2.48043 5 2.73478 5 3V21C5 21.2652 5.10536 21.5196 5.29289 21.7071C5.48043 21.8946 5.73478 22 6 22H18C18.2652 22 18.5196 21.8946 18.7071 21.7071C18.8946 21.5196 19 21.2652 19 21V3C19 2.73478 18.8946 2.48043 18.7071 2.29289C18.5196 2.10536 18.2652 2 18 2H6ZM3.87868 0.87868C4.44129 0.316071 5.20435 0 6 0H18C18.7956 0 19.5587 0.316071 20.1213 0.87868C20.6839 1.44129 21 2.20435 21 3V21C21 21.7957 20.6839 22.5587 20.1213 23.1213C19.5587 23.6839 18.7957 24 18 24H6C5.20435 24 4.44129 23.6839 3.87868 23.1213C3.31607 22.5587 3 21.7957 3 21V3C3 2.20435 3.31607 1.44129 3.87868 0.87868Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M13 4V20H11V4H13Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3321 5.49306C12.9743 5.37538 14.8534 5.79118 15.8567 6.34266L16.733 6.82435L15.7696 8.57704L14.8933 8.09535C14.2756 7.75583 12.7912 7.39363 11.4751 7.48795C10.8254 7.53451 10.3421 7.68505 10.0473 7.89289C9.80616 8.06288 9.64798 8.29339 9.64798 8.732C9.64798 9.28335 9.85957 9.60954 10.2524 9.89759C10.713 10.2353 11.3701 10.4762 12.2062 10.7548C12.2647 10.7743 12.3243 10.7941 12.385 10.8142C13.1116 11.0548 13.9784 11.3418 14.6605 11.7814C15.4703 12.3032 16.132 13.1117 16.132 14.351C16.132 15.3986 15.7813 16.2674 15.115 16.8974C14.4751 17.5024 13.6378 17.799 12.8088 17.9235C11.166 18.1704 9.20604 17.7962 7.66168 17.241L6.72064 16.9027L7.39724 15.0207L8.33828 15.359C9.71192 15.8528 11.3179 16.1251 12.5116 15.9457C13.1009 15.8572 13.4994 15.6725 13.7409 15.4441C13.9559 15.2409 14.132 14.9244 14.132 14.351C14.132 13.9693 13.9831 13.7241 13.5772 13.4626C13.1175 13.1663 12.4825 12.9549 11.6652 12.6827C11.635 12.6726 11.6045 12.6624 11.5738 12.6522C10.7889 12.3906 9.82498 12.0642 9.06979 11.5105C8.24688 10.9071 7.64798 10.0177 7.64798 8.732C7.64798 7.63612 8.12805 6.79887 8.89494 6.25825C9.60815 5.75546 10.5027 5.5525 11.3321 5.49306Z"></path>
+                          </svg>
+                        </div>
+                        <p class="ml-4 font-medium paragraph-14 ">Venda pelo App com TapTon, Link, Pix e Boleto</p>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
     </div>
+  {% endfor %}
 </div>
