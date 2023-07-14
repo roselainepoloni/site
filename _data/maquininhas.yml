@@ -11,19 +11,34 @@
     valor: 198.80
     valor_promocional: 106.80
     valor_12x: 8
+    foto: "/assets/img/machine-t1.png"
+    observacao: "/assets/img/precisadecelular.png"
+    observacao2: "none"
   - nome: T1 Chip Promo
+    foto: "/assets/img/machine-t1-chip.png"
+    observacao: "/assets/img/comchip1.png"
+    observacao2: "none"
     valor: 318.80
     valor_promocional: 286.80
     valor_12x: 23
   - nome: T2+ Promo
+    foto: "/assets/img/machine-t2.png"
+    observacao: "/assets/img/bateria1.png"
+    observacao2: "/assets/img/comchip1.png"
     valor: 478.80
     valor_promocional: 190.80
     valor_12x: 15
   - nome: T3 Promo
+    foto: "/assets/img/machine-t3.png"
+    observacao: "/assets/img/combobina1.png"
+    observacao2: "/assets/img/comchip1.png"
     valor: 958.80
     valor_promocional: 394.80
     valor_12x: 32
   - nome: T3 Smart Promo
+    foto: "/assets/img/machine-t3-smart.png"
+    observacao: "/assets/img/touchscreen1.png"
+    observacao2: "/assets/img/comchip1.png"
     valor: 958.80
     valor_promocional: 478.80
     valor_12x: 39

@@ -72,9 +72,13 @@
                         class="block h-full rounded-lg bg-white">
                         <div class="p-6 text-center">
                           <div class="flex items-center">
-                            <img class="w-30 absolute mb-12 -ml-4" src="{{ site.base_url }}/assets/img/machine-t1.png">
-                            <div class="">
-                              <img class="w-24 mb-12 mb-6 relative ml-32 " src="{{ site.base_url }}/assets/img/precisadecelular.png">
+                            <img class="w-30 absolute mb-12 -ml-4 h-[200px]" src="{{ site.base_url }}{{maquina.foto}}">
+                            <div class="flex relative ml-32">
+                              {% if maquina.promocao2 == "none" %}
+                                <img class="w-16 mb-12 mb-6" src="{{ site.base_url }}{{maquina.observacao}}">
+                              {% endif %}
+                              <img class="w-16 mb-12 mb-6" src="{{ site.base_url }}{{maquina.observacao}}">
+                              <img class="w-16 mb-12 mb-6 -ml-4" src="{{ site.base_url }}{{maquina.observacao2}}">
                             </div>
                           </div>
                         </div>
