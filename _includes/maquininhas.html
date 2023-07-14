@@ -4,82 +4,110 @@
     <p>Planos e taxas válidas apenas pra novos pedidos de maquininha. Veja como funciona</p>
   </div>
 </div>
-
-<div class="flex text-sm space-x-12 justify-center text-center w-full px-12 mt-4">
-  <div class="bg-[rgb(209,255,219)] text-[rgb(0,148,32)] font-semibold p-2 rounded-xl w-1/3">
-    <h1>Taxas válidas pra quem vende a partir de R$ 2.000 por mês</h1>
-  </div>
-  <div class="bg-[rgb(209,255,219)] text-[rgb(0,148,32)] font-semibold p-2 rounded-xl w-1/3">
-    <h1>Sem mínimo de vendas</h1>
+<div class="w-full">
+  <div class="space-y-3 md:space-y-0 text-center p-4 md:flex md:space-x-12 md:justify-center md:w-full md:px-12 md:items-center">
+    <div class="bg-[rgb(209,255,219)] text-[rgb(0,148,32)] font-semibold p-2 rounded-xl w-full md:w-1/3">
+      <h1>Taxas válidas pra quem vende a partir de R$ 2.000 por mês</h1>
+    </div>
+    <div class="bg-[rgb(209,255,219)] text-[rgb(0,148,32)] font-semibold p-2 rounded-xl w-full md:w-1/3">
+      <h1>Sem mínimo de vendas</h1>
+    </div>
   </div>
 </div>
-
 
 <div class="flex flex-col justify-center items-center md:flex-row h-auto">
     <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
     {% for promocao in site.data.maquininhas %}
     <li class="mr-2" role="presentation">
-      <button class="mb-6 lg:mb-0" id="{{ promocao.id }}-tab" data-tabs-target="#{{ promocao.id }}" type="button" role="tab" aria-controls="{{ promocao.id }}" aria-selected="false">
-        <div class="rounded-lg bg-white hover:shadow-lg border border-gray-200 m-2 hover:border-green-300 p-1">
-          <div class="p-2">
-            <div class="flex justify-between items-center">
-              <h2 class="mb-4 text-3xl text-initial">
-                <strong>{{promocao.nome}}</strong>
-              </h2>
-              <img class="w-16" alt="Icone Taxa Pix Qr Code" src="{{ site.base_url }}/assets/img/taxapixqrcode.png">
-            </div>
-            <p class="mb-4 mt-4">
-              {{promocao.texto}}
-            </p>
-            <div class="bg-gray-100 rounded-lg p-3">
-              <ul>
-                <div class="flex justify-center space-x-4 text-center uppercase">
-                  <l1>
-                    <h1 class="font-bold text-xs">DÉBITO</h1>
-                    <p class="text-2xl text-[rgb(0,148,32)] font-bold">{{promocao.debito}}</p>
-                  </l1>
-                  <l1>
-                    <h1 class="font-bold text-xs">CRÉDITO</h1>
-                    <p class="text-2xl text-[rgb(0,148,32)] font-bold">{{promocao.credito}}</p>
-                  </l1>
-                  <l1>
-                    <h1 class="font-bold text-xs whitespace-nowrap ">CRÉDITO 12x</h1>
-                    <p class="text-2xl text-[rgb(0,148,32)] font-bold">{{promocao.credito_12x}}</p>
-                  </l1>
-                </div>
-              </ul>
-            </div>
-            <div class="bg-gray-50 rounded-t-none rounded-b items-center justify-center -mt-2">
-              {% if promocao.promocional %}
-                <p>Taxas promocionais</p>
-              {% endif %}
-              {% if promocao.url_regulamento %}
-                <a class="hover:underline" href="{{ promocao.url_regulamento }}" target="_blank">Confira o Regulamento</a>
-              {% endif %}
+      <a href="#maquininhas">
+        <button class="mb-6 lg:mb-0" id="{{ promocao.id }}-tab" data-tabs-target="#{{ promocao.id }}" type="button" role="tab" aria-controls="{{ promocao.id }}" aria-selected="false">
+          <div class="rounded-lg h-[250px] bg-white hover:shadow-lg border border-gray-200 m-2 hover:border-green-300 p-1">
+            <div class="p-2">
+              <div class="flex justify-between items-center">
+                <h2 class="mb-4 text-3xl text-initial">
+                  <strong>{{promocao.nome}}</strong>
+                </h2>
+                <img class="w-16" alt="Icone Taxa Pix Qr Code" src="{{ site.base_url }}/assets/img/taxapixqrcode.png">
+              </div>
+              <p class="mb-4 mt-4">
+                {{promocao.texto}}
+              </p>
+              <div class="bg-gray-100 rounded-lg p-3">
+                <ul>
+                  <div class="flex justify-center space-x-4 text-center uppercase">
+                    <l1>
+                      <h1 class="font-bold text-xs">DÉBITO</h1>
+                      <p class="text-2xl text-[rgb(0,148,32)] font-bold">{{promocao.debito}}</p>
+                    </l1>
+                    <l1>
+                      <h1 class="font-bold text-xs">CRÉDITO</h1>
+                      <p class="text-2xl text-[rgb(0,148,32)] font-bold">{{promocao.credito}}</p>
+                    </l1>
+                    <l1>
+                      <h1 class="font-bold text-xs whitespace-nowrap ">CRÉDITO 12x</h1>
+                      <p class="text-2xl text-[rgb(0,148,32)] font-bold">{{promocao.credito_12x}}</p>
+                    </l1>
+                  </div>
+                </ul>
+              </div>
+              <div class="bg-gray-50 rounded-t-none rounded-b items-center justify-center -mt-2">
+                {% if promocao.promocional %}
+                  <p>Taxas promocionais</p>
+                {% endif %}
+                {% if promocao.url_regulamento %}
+                  <a class="hover:underline" href="{{ promocao.url_regulamento }}" target="_blank">Confira o Regulamento</a>
+                {% endif %}
+              </div>
             </div>
           </div>
-        </div>
-      </button>
+        </button>
+      </a>
     </li>
     {% endfor %}
   </ul>
 </div>
+<section id="maquininhas">
+</section>
 <div id="myTabContent">
   {% for promocao in site.data.maquininhas %}
     <div class="hidden container mx-auto md:px-2" id="{{ promocao.id }}" role="tabpanel" aria-labelledby="{{ promocao.id }}-tab">
       <section>
-        <div class="grid gap-6 lg:grid-cols-5 lg:gap-x-12">
+        {% if promocao.modal_id != "" %}
+          <div class="flex justify-center">
+            <div class="text-center border border-gray-100 p-4 rounded-lg shadow-lg">
+              <h3 class="text-xl my-6 font-bold">Confira as taxas no link abaixo:</h3>
+              <button data-modal-target="{{promocao.modal_id}}-modal" data-modal-toggle="{{promocao.modal_id}}-modal" class="bg-[rgb(0,235,51)] rounded-full hover:ring-green-300 hover:ring-2 px-5 py-3 font-semibold" type="button" >
+                Tabela de taxas
+              </button>
+              <p class="mt-2 font-md">( {{promocao.observaco_taxas}} )</p>
+            </div>
+          </div>
+          <div id="{{promocao.modal_id}}-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative w-full max-w-lg max-h-full">
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                  <button type="button" class="absolute right-2 mt-2 z-10 text-gray-600 bg-transparent hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="{{promocao.modal_id}}-modal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                  </button>
+
+                  <img class="rounded-lg" src="{{ site.base_url }}{{promocao.taxa_tabela}}">
+                </div>
+            </div>
+          </div>
+        {% endif %}
+        <div class="grid gap-6 lg:grid-cols-5 lg:gap-x-12 mt-32">
           {% for maquina in promocao.maquinas %}
             <div class="mb-6 lg:mb-0">
-              <div
-                class="block h-full rounded-lg bg-white">
+              <div class="block h-full rounded-lg bg-white border border-gray-200 hover:border-green-300 shadow-lg">
                 <div class="p-6 text-center">
                   <div class="flex items-center">
-                    <img class="w-30 absolute mb-12 -ml-4 h-[200px]" src="{{ site.base_url }}{{maquina.foto}}">
-                    <div class="flex relative ml-32">
-                      <img class="w-16 mb-12 mb-6" src="{{ site.base_url }}{{maquina.observacao}}">
+                    <img class="w-30 absolute mb-12 -ml-8 h-[200px]" src="{{ site.base_url }}{{maquina.foto}}">
+                    <div class="flex relative ml-[100px]">
+                      <img class="w-[75px] mb-6 mb-6" src="{{ site.base_url }}{{maquina.observacao}}">
                       {% if maquina.observacao2 != "none" %}
-                      <img class="w-16 mb-12 mb-6 -ml-4" src="{{ site.base_url }}{{maquina.observacao2}}">
+                      <img class="w-[75px] mb-6 mb-6 -ml-4" src="{{ site.base_url }}{{maquina.observacao2}}">
                       {% endif %}
                     </div>
                   </div>
@@ -89,16 +117,16 @@
                   <div class="flex justify-between whitespace-nowrap">
                     <div>
                       <p class="line-through">R$ {{maquina.valor}}</p>
-                      <p class="font-semibold">R$ {{maquina.valor_promocional}}</p>
+                      <p class="font-semibold text-md mr-2">R$ {{maquina.valor_promocional}}</p>
                       <p>à vista ou</p>
                     </div>
                     <div class="flex justify-end my-auto ml-auto font-heading font-bold text-newTon-700 paragraph-14 md:paragraph-16">
                       <div class="self-end mr-2 text-right">
-                        <p class="leading-none text-display-900 paragraph-18">12x</p>
-                        <p class="mt-1 leading-none text-[rgb(0,148,32)] paragraph-18">R$</p>
+                        <p class="leading-none ">12x</p>
+                        <p class="mt-1 leading-none text-[rgb(0,148,32)] ">R$</p>
                       </div>
                       <p class="self-end text-[78px] leading-[58px] text-[rgb(0,148,32)]">{{maquina.valor_12x}}</p>
-                      <p class="leading-[20px] text-[rgb(0,148,32)] paragraph-18">,90</p>
+                      <p class="leading-[20px] text-[rgb(0,148,32)]">,90</p>
                     </div>
                   </div>
 
@@ -158,6 +186,22 @@
                         </div>
                         <p class="ml-4 font-medium paragraph-14 ">Receba por aproximação (NFC)</p>
                       </li>
+                      {% if maquina.comprovante_impresso %}
+                      <li class=" flex mt-4 first:mt-0 list-none">
+                        <div class="min-w-[24px] max-w-[24px] min-h-[24px] max-h-[24px]">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-current undefined">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2 0H22V23.8685L18 21.2019L15 23.2019L12 21.2019L9 23.2019L6 21.2019L2 23.8685V0ZM4 2V20.1315L6 18.7981L9 20.7981L12 18.7981L15 20.7981L18 18.7981L20 20.1315V2H4Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6 6H13V8H6V6Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15 6H18V8H15V6Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6 10H13V12H6V10Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15 10H18V12H15V10Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6 14H13V16H6V14Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15 14H18V16H15V14Z"></path>
+                          </svg>
+                        </div>
+                        <p class="ml-4 font-medium paragraph-14 ">Comprovante impresso ou SMS</p>
+                      </li>
+                      {% else %}
                       <li class=" flex mt-4 first:mt-0 list-none">
                         <div class="min-w-[24px] max-w-[24px] min-h-[24px] max-h-[24px]">
                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-current undefined">
@@ -167,6 +211,7 @@
                         </div>
                         <p class="ml-4 font-medium paragraph-14 ">Comprovante por SMS</p>
                       </li>
+                      {% endif %}
                       <li class=" flex mt-4 first:mt-0 list-none">
                         <div class="min-w-[24px] max-w-[24px] min-h-[24px] max-h-[24px]">
                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-current undefined">
@@ -177,6 +222,52 @@
                         </div>
                         <p class="ml-4 font-medium paragraph-14 ">Venda pelo App com TapTon, Link, Pix e Boleto</p>
                       </li>
+                      </li>
+                      {% if maquina.bateria_extra %}
+                      <li class=" flex mt-4 first:mt-0 list-none">
+                        <div class="min-w-[24px] max-w-[24px] min-h-[24px] max-h-[24px]">
+                          <svg>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M24 8V16H22V8H24Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3 7C2.44772 7 2 7.44772 2 8V16C2 16.5523 2.44772 17 3 17H18C18.5523 17 19 16.5523 19 16V8C19 7.44772 18.5523 7 18 7H3ZM0 8C0 6.34315 1.34315 5 3 5H18C19.6569 5 21 6.34315 21 8V16C21 17.6569 19.6569 19 18 19H3C1.34315 19 0 17.6569 0 16V8Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.99998 8L15.4 12.8L14.2 14.4L11 12V16L4.59998 11.2L5.79998 9.6L8.99998 12V8Z"></path>
+                          </svg>
+                        </div>
+                        <p class="ml-4 font-medium paragraph-14 ">Bateria de longa duração</p>
+                      </li>
+                      {% endif %}
+                      {% if maquina.qrcode_pix %}
+                      <li class=" flex mt-4 first:mt-0 list-none">
+                        <div class="min-w-[24px] max-w-[24px] min-h-[24px] max-h-[24px]">
+                          <svg>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11 9V5H13V9H11Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M20 15V11H22V15H20Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M14 15V11H16V15H14Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M20 22L20 17L22 17L22 22L20 22Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M22 19H15V17H22V19Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11 22V17H13V22H11Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15 22V17H17V22H15Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16 13L11 13V11H16V13Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M22.0001 15L17.7144 15L17.7144 13L22.0001 13L22.0001 15Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9 13L2 13L2 11L9 11V13Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4 7.14286H7.14286V4H4V7.14286ZM9.14286 9.14286V2H2V9.14286H9.14286Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4 20H7.14286V16.8572H4V20ZM9.14286 22V14.8572H2V22H9.14286Z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.8571 7.14286H20V4H16.8571V7.14286ZM22 9.14286V2H14.8571V9.14286H22Z"></path>
+                          </svg>
+                        </div>
+                        <p class="ml-4 font-medium paragraph-14 ">Aceite Pix QR Code na Maquininha</p>
+                      </li>
+                      {% endif %}
+                      {% if maquina.touch %}
+                      <li class=" flex mt-4 first:mt-0 list-none">
+                        <div class="min-w-[24px] max-w-[24px] min-h-[24px] max-h-[24px]">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-current text-display-900 fill-[transparent]"><g id="touchscreen"><g id="Group">
+                            <path id="Vector" d="M6 11V14" fill-rule="evenodd" clip-rule="evenodd"></path>
+                            <path id="Vector_2" d="M18.1276 9.47775L10 8V3.10699C10 2.11074 9.31925 1.18736 8.33593 1.02738C7.0829 0.823541 6 1.78525 6 3V8.39832V11H4C2.89543 11 2 11.8954 2 13V15.8953C2 17.2578 2.4637 18.5797 3.31483 19.6436L6 23H19L20.5561 12.8855C20.8032 11.2794 19.7265 9.76845 18.1276 9.47775Z" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"></path></g></g>
+                          </svg>
+                        </div>
+                        <p class="ml-4 font-medium paragraph-14 ">Sistema Android com Visor Touchscreen</p>
+                      </li>
+                      {% endif %}
                     </ol>
                   </div>
                 </div>

@@ -6,43 +6,65 @@
   debito: 0,85%
   credito: 0,85%
   credito_12x: 9,89%
+  taxa_tabela: "/assets/img/PromoTon-tab.png"
+  modal_id: "promoton"
+  observaco_taxas: "Taxas válidas pra quem vende a partir de R$ 2.000 por mês"
   maquinas:
   - nome: T1 Promo
-    valor: 198,80
-    valor_promocional: 106,80
+    valor: "198,80"
+    valor_promocional: "106,80"
     valor_12x: 8
     foto: "/assets/img/machine-t1.png"
     observacao: "/assets/img/precisadecelular.png"
     observacao2: "none"
+    touch: false
+    qrcode_pix: false
+    bateria_extra: false
+    comprovante_impresso: false
   - nome: T1 Chip Promo
     foto: "/assets/img/machine-t1-chip.png"
     observacao: "/assets/img/comchip1.png"
     observacao2: "none"
-    valor: 318,80
-    valor_promocional: 286,80
+    valor: "318,80"
+    valor_promocional: "286,80"
     valor_12x: 23
+    touch: false
+    qrcode_pix: false
+    bateria_extra: false
+    comprovante_impresso: false
   - nome: T2+ Promo
     foto: "/assets/img/machine-t2.png"
     observacao: "/assets/img/bateria1.png"
     observacao2: "/assets/img/comchip1.png"
-    valor: 478,80
-    valor_promocional: 190,80
+    valor: "478,80"
+    valor_promocional: "190,80"
     valor_12x: 15
+    touch: false
+    qrcode_pix: false
+    bateria_extra: true
+    comprovante_impresso: false
   - nome: T3 Promo
     foto: "/assets/img/machine-t3.png"
-    observacao: "/assets/img/combobina1.png"
-    observacao2: "/assets/img/comchip1.png"
-    valor: 958,80
-    valor_promocional: 394,80
+    observacao: "/assets/img/comchip1.png"
+    observacao2: "/assets/img/combobina1.png"
+    valor: "958,80"
+    valor_promocional: "394,80"
     valor_12x: 32
+    touch: false
+    qrcode_pix: true
+    bateria_extra: false
+    comprovante_impresso: true
   - nome: T3 Smart Promo
     foto: "/assets/img/machine-t3-smart.png"
     observacao: "/assets/img/touchscreen1.png"
-    observacao2: "/assets/img/comchip1.png"
-    valor: 958,80
-    valor_promocional: 478,80
+    observacao2: "/assets/img/bateria1.png"
+    valor: "958,80"
+    valor_promocional: "478,80"
     valor_12x: 39
-
+    touch: true
+    qrcode_pix: true
+    bateria_extra: true
+    comprovante_impresso: true
 - nome: GigaTon
   id: giga-ton
   texto: Para quem vende mais no parcelado
@@ -51,27 +73,65 @@
   debito: 1,79%
   credito: 3,69%
   credito_12x: 13,49%
+  taxa_tabela: "/assets/img/GigaTon-tab.png"
+  modal_id: "gigaton"
+  observaco_taxas: "Taxas válidas pra quem vende a partir de R$ 2.000 por mês"
   maquinas:
   - nome: T1 Giga
-    valor: 198,80
-    valor_promocional: 194,80
+    valor: "198,80"
+    valor_promocional: "194,80"
     valor_12x: 7
+    foto: "/assets/img/machine-t1.png"
+    observacao: "/assets/img/precisadecelular.png"
+    observacao2: "none"
+    touch: false
+    qrcode_pix: false
+    bateria_extra: false
+    comprovante_impresso: false
   - nome: T1 Chip Giga
     valor: 318.80
-    valor_promocional: 214,80
+    valor_promocional: "214,80"
     valor_12x: 17
+    foto: "/assets/img/machine-t1-chip.png"
+    observacao: "/assets/img/comchip1.png"
+    observacao2: "none"
+    touch: false
+    qrcode_pix: false
+    bateria_extra: false
+    comprovante_impresso: false
   - nome: T2+ Giga
-    valor: 478,80
-    valor_promocional: 154,80
+    valor: "478,80"
+    valor_promocional: "154,80"
     valor_12x: 12
+    foto: "/assets/img/machine-t2.png"
+    observacao: "/assets/img/bateria1.png"
+    observacao2: "/assets/img/comchip1.png"
+    touch: false
+    qrcode_pix: false
+    bateria_extra: true
+    comprovante_impresso: false
   - nome: T3 Giga
-    valor: 958,80
-    valor_promocional: 382,80
+    valor: "958,80"
+    valor_promocional: "382,80"
     valor_12x: 31
+    foto: "/assets/img/machine-t3.png"
+    observacao: "/assets/img/comchip1.png"
+    observacao2: "/assets/img/combobina1.png"
+    touch: false
+    qrcode_pix: true
+    bateria_extra: false
+    comprovante_impresso: true
   - nome: T3 Smart Giga
-    valor: 958,80
-    valor_promocional: 466,80
+    valor: "958,80"
+    valor_promocional: "466,80"
     valor_12x: 38
+    foto: "/assets/img/machine-t3-smart.png"
+    observacao: "/assets/img/touchscreen1.png"
+    observacao2: "/assets/img/bateria1.png"
+    touch: true
+    qrcode_pix: true
+    bateria_extra: true
+    comprovante_impresso: true
 
 - nome: MegaTon
   id: mega-ton
@@ -80,28 +140,65 @@
   debito: 1,69%
   credito: 3,49%
   credito_12x: 17,99%
+  taxa_tabela: "/assets/img/MegaTon-tab.png"
+  modal_id: "megaton"
+  observaco_taxas: "Sem mínimo de vendas"
   maquinas:
   - nome: T1 Mega
-    valor: 198,80
-    valor_promocional: 94,80
+    valor: "198,80"
+    valor_promocional: "94,80"
     valor_12x: 7
+    foto: "/assets/img/machine-t1.png"
+    observacao: "/assets/img/precisadecelular.png"
+    observacao2: "none"
+    touch: false
+    qrcode_pix: false
+    bateria_extra: false
+    comprovante_impresso: false
   - nome: T1 Chip Mega
-    valor: 318,80
-    valor_promocional: 214,80
+    valor: "318,80"
+    valor_promocional: "214,80"
     valor_12x: 17
+    foto: "/assets/img/machine-t1-chip.png"
+    observacao: "/assets/img/comchip1.png"
+    observacao2: "none"
+    touch: false
+    qrcode_pix: false
+    bateria_extra: false
+    comprovante_impresso: false
   - nome: T2+ Mega
-    valor: 478,80
-    valor_promocional: 154,80
+    valor: "478,80"
+    valor_promocional: "154,80"
     valor_12x: 12
+    foto: "/assets/img/machine-t2.png"
+    observacao: "/assets/img/bateria1.png"
+    observacao2: "/assets/img/comchip1.png"
+    touch: false
+    qrcode_pix: false
+    bateria_extra: true
+    comprovante_impresso: false
   - nome: T3 Mega
-    valor: 958,80
-    valor_promocional: 382,80
+    valor: "958,80"
+    valor_promocional: "382,80"
     valor_12x: 31
+    foto: "/assets/img/machine-t3.png"
+    observacao: "/assets/img/comchip1.png"
+    observacao2: "/assets/img/combobina1.png"
+    touch: false
+    qrcode_pix: true
+    bateria_extra: false
+    comprovante_impresso: true
   - nome: T3 Smart Mega
-    valor: 958,80
-    valor_promocional: 466,80
+    valor: "958,80"
+    valor_promocional: "466,80"
     valor_12x: 38
-
+    foto: "/assets/img/machine-t3-smart.png"
+    observacao: "/assets/img/touchscreen1.png"
+    observacao2: "/assets/img/bateria1.png"
+    touch: true
+    qrcode_pix: true
+    bateria_extra: true
+    comprovante_impresso: true
 - nome: Ton Básico
   id: ton-basico
   texto: Maquinas com os melhores preços
@@ -109,24 +206,61 @@
   debito: 1,99%
   credito: 4,99%
   credito_12x: 22,59%
+  taxa_tabela: ""
+  modal_id: ""
   maquinas:
   - nome: T1 Básico
-    valor: 198,80
-    valor_promocional: 22,80
+    valor: "198,80"
+    valor_promocional: "22,80"
     valor_12x: 1
+    foto: "/assets/img/machine-t1.png"
+    observacao: "/assets/img/precisadecelular.png"
+    observacao2: "none"
+    touch: false
+    qrcode_pix: false
+    bateria_extra: false
+    comprovante_impresso: false
   - nome: T1 Chip Básico
-    valor: 318,80
-    valor_promocional: 142,80
+    valor: "318,80"
+    valor_promocional: "142,80"
     valor_12x: 11
+    foto: "/assets/img/machine-t1-chip.png"
+    observacao: "/assets/img/comchip1.png"
+    observacao2: "none"
+    touch: false
+    qrcode_pix: false
+    bateria_extra: false
+    comprovante_impresso: false
   - nome: T2+ Básico
-    valor: 478,80
-    valor_promocional: 118,80
+    valor: "478,80"
+    valor_promocional: "118,80"
     valor_12x: 9
+    foto: "/assets/img/machine-t2.png"
+    observacao: "/assets/img/bateria1.png"
+    observacao2: "/assets/img/comchip1.png"
+    touch: false
+    qrcode_pix: false
+    bateria_extra: true
+    comprovante_impresso: false
   - nome: T3 Básico
-    valor: 958,80
-    valor_promocional: 238,80
+    valor: "958,80"
+    valor_promocional: "238,80"
     valor_12x: 19
+    foto: "/assets/img/machine-t3.png"
+    observacao: "/assets/img/comchip1.png"
+    observacao2: "/assets/img/combobina1.png"
+    touch: false
+    qrcode_pix: true
+    bateria_extra: false
+    comprovante_impresso: true
   - nome: T3 Smart Básico
-    valor: 958,80
-    valor_promocional: 358,80
+    valor: "958,80"
+    valor_promocional: "358,80"
     valor_12x: 29
+    foto: "/assets/img/machine-t3-smart.png"
+    observacao: "/assets/img/touchscreen1.png"
+    observacao2: "/assets/img/bateria1.png"
+    touch: true
+    qrcode_pix: true
+    bateria_extra: true
+    comprovante_impresso: true
