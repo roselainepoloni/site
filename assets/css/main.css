@@ -2079,9 +2079,6 @@ input:checked + .toggle-bg {
   .md\:hidden {
     display: none;
   }
-  .md\:h-\[600px\] {
-    height: 600px;
-  }
   .md\:h-\[60px\] {
     height: 60px;
   }
@@ -2158,6 +2155,9 @@ input:checked + .toggle-bg {
   }
   .lg\:mb-0 {
     margin-bottom: 0;
+  }
+  .lg\:h-\[700px\] {
+    height: 700px;
   }
   .lg\:max-w-\[1280px\] {
     max-width: 1280px;
