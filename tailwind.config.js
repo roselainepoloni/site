@@ -1,5 +1,6 @@
 module.exports = {
   content: [
+    './node_modules/flowbite/**/*.js',
     './_drafts/**/*.html',
     './_includes/**/*.html',
     './_layouts/**/*.html',
@@ -12,5 +13,7 @@ module.exports = {
       extend: {},
     },
   },
-  plugins: []
+  plugins: [
+    require('flowbite/plugin')
+  ]
 }
