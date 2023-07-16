@@ -10,61 +10,72 @@
   modal_id: "promoton"
   observaco_taxas: "Taxas válidas pra quem vende a partir de R$ 2.000 por mês"
   maquinas:
-  - nome: T1 Promo
-    valor: "198,80"
-    valor_promocional: "106,80"
-    valor_12x: 8
-    foto: "/assets/img/machine-t1.png"
-    observacao: "/assets/img/precisadecelular.png"
-    observacao2: "none"
+  - nome: T3 Smart Promo
+    foto: "/assets/img/machine-t3-smart.png"
+    observacao: "/assets/img/touchscreen1.png"
+    observacao2: "/assets/img/bateria1.png"
+    url: https://ton.com.br/checkout/#/cart?productId=PROMOTON_TIER_SMART_POS&referrer=5FCA238E-FF9A-4C6C-9CD5-AC7A0705B05C&userTag=promoton_tier&utm_medium=invite_share&utm_source=revendedor
+    valor: "958,80"
+    valor_promocional: "454,86"
+    valor_12x: 37
+    valor_cents: 90
+    touch: true
+    qrcode_pix: true
+    bateria_extra: true
+    comprovante_impresso: true
+  - nome: T3 Promo
+    foto: "/assets/img/machine-t3.png"
+    observacao: "/assets/img/comchip1.png"
+    observacao2: "/assets/img/combobina1.png"
+    url: https://ton.com.br/checkout/#/cart?productId=PROMOTON_TIER_S920&referrer=5FCA238E-FF9A-4C6C-9CD5-AC7A0705B05C&userTag=promoton_tier&utm_medium=invite_share&utm_source=revendedor
+    valor: "958,80"
+    valor_promocional: "375,06"
+    valor_12x: 31
+    valor_cents: 25
+    touch: false
+    qrcode_pix: true
+    bateria_extra: false
+    comprovante_impresso: true
+  - nome: T2+ Promo
+    foto: "/assets/img/machine-t2.png"
+    observacao: "/assets/img/bateria1.png"
+    observacao2: "/assets/img/comchip1.png"
+    url: https://ton.com.br/checkout/#/cart?productId=PROMOTON_TIER_D195&referrer=5FCA238E-FF9A-4C6C-9CD5-AC7A0705B05C&userTag=promoton_tier&utm_medium=invite_share&utm_source=revendedor
+    valor: "478,80"
+    valor_promocional: "181,26"
+    valor_12x: 15
+    valor_cents: 10
     touch: false
     qrcode_pix: false
-    bateria_extra: false
+    bateria_extra: true
     comprovante_impresso: false
   - nome: T1 Chip Promo
     foto: "/assets/img/machine-t1-chip.png"
     observacao: "/assets/img/comchip1.png"
     observacao2: "none"
+    url: https://ton.com.br/checkout/#/cart?productId=PROMOTON_TIER_T1_CHIP&referrer=5FCA238E-FF9A-4C6C-9CD5-AC7A0705B05C&userTag=promoton_tier&utm_medium=invite_share&utm_source=revendedor
     valor: "318,80"
-    valor_promocional: "286,80"
-    valor_12x: 23
+    valor_promocional: "272,46"
+    valor_12x: 22
+    valor_cents: 70
     touch: false
     qrcode_pix: false
     bateria_extra: false
     comprovante_impresso: false
-  - nome: T2+ Promo
-    foto: "/assets/img/machine-t2.png"
-    observacao: "/assets/img/bateria1.png"
-    observacao2: "/assets/img/comchip1.png"
-    valor: "478,80"
-    valor_promocional: "190,80"
-    valor_12x: 15
+  - nome: T1 Promo
+    valor: "198,80"
+    valor_promocional: "101,46"
+    valor_12x: 8
+    valor_cents: 45
+    foto: "/assets/img/machine-t1.png"
+    observacao: "/assets/img/precisadecelular.png"
+    observacao2: "none"
+    url: https://ton.com.br/checkout/#/cart?productId=PROMOTON_TIER_D150&referrer=5FCA238E-FF9A-4C6C-9CD5-AC7A0705B05C&userTag=promoton_tier&utm_medium=invite_share&utm_source=revendedor
     touch: false
     qrcode_pix: false
-    bateria_extra: true
-    comprovante_impresso: false
-  - nome: T3 Promo
-    foto: "/assets/img/machine-t3.png"
-    observacao: "/assets/img/comchip1.png"
-    observacao2: "/assets/img/combobina1.png"
-    valor: "958,80"
-    valor_promocional: "394,80"
-    valor_12x: 32
-    touch: false
-    qrcode_pix: true
     bateria_extra: false
-    comprovante_impresso: true
-  - nome: T3 Smart Promo
-    foto: "/assets/img/machine-t3-smart.png"
-    observacao: "/assets/img/touchscreen1.png"
-    observacao2: "/assets/img/bateria1.png"
-    valor: "958,80"
-    valor_promocional: "478,80"
-    valor_12x: 39
-    touch: true
-    qrcode_pix: true
-    bateria_extra: true
-    comprovante_impresso: true
+    comprovante_impresso: false
+
 - nome: GigaTon
   id: giga-ton
   texto: Para quem vende mais no parcelado
@@ -77,61 +88,71 @@
   modal_id: "gigaton"
   observaco_taxas: "Taxas válidas pra quem vende a partir de R$ 2.000 por mês"
   maquinas:
-  - nome: T1 Giga
-    valor: "198,80"
-    valor_promocional: "194,80"
-    valor_12x: 7
-    foto: "/assets/img/machine-t1.png"
-    observacao: "/assets/img/precisadecelular.png"
-    observacao2: "none"
-    touch: false
-    qrcode_pix: false
-    bateria_extra: false
-    comprovante_impresso: false
-  - nome: T1 Chip Giga
-    valor: 318.80
-    valor_promocional: "214,80"
-    valor_12x: 17
-    foto: "/assets/img/machine-t1-chip.png"
-    observacao: "/assets/img/comchip1.png"
-    observacao2: "none"
-    touch: false
-    qrcode_pix: false
-    bateria_extra: false
-    comprovante_impresso: false
-  - nome: T2+ Giga
-    valor: "478,80"
-    valor_promocional: "154,80"
-    valor_12x: 12
-    foto: "/assets/img/machine-t2.png"
-    observacao: "/assets/img/bateria1.png"
-    observacao2: "/assets/img/comchip1.png"
-    touch: false
-    qrcode_pix: false
-    bateria_extra: true
-    comprovante_impresso: false
-  - nome: T3 Giga
-    valor: "958,80"
-    valor_promocional: "382,80"
-    valor_12x: 31
-    foto: "/assets/img/machine-t3.png"
-    observacao: "/assets/img/comchip1.png"
-    observacao2: "/assets/img/combobina1.png"
-    touch: false
-    qrcode_pix: true
-    bateria_extra: false
-    comprovante_impresso: true
   - nome: T3 Smart Giga
     valor: "958,80"
-    valor_promocional: "466,80"
-    valor_12x: 38
+    valor_promocional: "443,46"
+    valor_12x: 36
+    valor_cents: 95
     foto: "/assets/img/machine-t3-smart.png"
     observacao: "/assets/img/touchscreen1.png"
     observacao2: "/assets/img/bateria1.png"
+    url: https://ton.com.br/checkout/#/cart?productId=GIGATON_TIER_SMART_POS&referrer=5FCA238E-FF9A-4C6C-9CD5-AC7A0705B05C&userTag=gigaton_tier&utm_medium=invite_share&utm_source=revendedor
     touch: true
     qrcode_pix: true
     bateria_extra: true
     comprovante_impresso: true
+  - nome: T3 Giga
+    valor: "958,80"
+    valor_promocional: "363,66"
+    valor_12x: 30
+    valor_cents: 30
+    foto: "/assets/img/machine-t3.png"
+    observacao: "/assets/img/comchip1.png"
+    observacao2: "/assets/img/combobina1.png"
+    url: https://ton.com.br/checkout/#/cart?productId=GIGATON_TIER_S920&referrer=5FCA238E-FF9A-4C6C-9CD5-AC7A0705B05C&userTag=gigaton_tier&utm_medium=invite_share&utm_source=revendedor
+    touch: false
+    qrcode_pix: true
+    bateria_extra: false
+    comprovante_impresso: true
+  - nome: T2+ Giga
+    valor: "478,80"
+    valor_promocional: "147,06"
+    valor_12x: 12
+    valor_cents: 25
+    foto: "/assets/img/machine-t2.png"
+    observacao: "/assets/img/bateria1.png"
+    observacao2: "/assets/img/comchip1.png"
+    url: https://ton.com.br/checkout/#/cart?productId=GIGATON_TIER_D195&referrer=5FCA238E-FF9A-4C6C-9CD5-AC7A0705B05C&userTag=gigaton_tier&utm_medium=invite_share&utm_source=revendedor
+    touch: false
+    qrcode_pix: false
+    bateria_extra: true
+    comprovante_impresso: false
+  - nome: T1 Chip Giga
+    valor: 318.80
+    valor_promocional: "204,06"
+    valor_12x: 17
+    valor_cents: 00
+    foto: "/assets/img/machine-t1-chip.png"
+    observacao: "/assets/img/comchip1.png"
+    observacao2: "none"
+    url: https://ton.com.br/checkout/#/cart?productId=GIGATON_TIER_T1_CHIP&referrer=5FCA238E-FF9A-4C6C-9CD5-AC7A0705B05C&userTag=gigaton_tier&utm_medium=invite_share&utm_source=revendedor
+    touch: false
+    qrcode_pix: false
+    bateria_extra: false
+    comprovante_impresso: false
+  - nome: T1 Giga
+    valor: "198,80"
+    valor_promocional: "90,06"
+    valor_12x: 7
+    valor_cents: 50
+    foto: "/assets/img/machine-t1.png"
+    observacao: "/assets/img/precisadecelular.png"
+    observacao2: "none"
+    url: https://ton.com.br/checkout/#/cart?productId=GIGATON_TIER_D150&referrer=5FCA238E-FF9A-4C6C-9CD5-AC7A0705B05C&userTag=gigaton_tier&utm_medium=invite_share&utm_source=revendedor
+    touch: false
+    qrcode_pix: false
+    bateria_extra: false
+    comprovante_impresso: false
 
 - nome: MegaTon
   id: mega-ton
@@ -144,61 +165,72 @@
   modal_id: "megaton"
   observaco_taxas: "Sem mínimo de vendas"
   maquinas:
-  - nome: T1 Mega
-    valor: "198,80"
-    valor_promocional: "94,80"
-    valor_12x: 7
-    foto: "/assets/img/machine-t1.png"
-    observacao: "/assets/img/precisadecelular.png"
-    observacao2: "none"
-    touch: false
-    qrcode_pix: false
-    bateria_extra: false
-    comprovante_impresso: false
-  - nome: T1 Chip Mega
-    valor: "318,80"
-    valor_promocional: "214,80"
-    valor_12x: 17
-    foto: "/assets/img/machine-t1-chip.png"
-    observacao: "/assets/img/comchip1.png"
-    observacao2: "none"
-    touch: false
-    qrcode_pix: false
-    bateria_extra: false
-    comprovante_impresso: false
-  - nome: T2+ Mega
-    valor: "478,80"
-    valor_promocional: "154,80"
-    valor_12x: 12
-    foto: "/assets/img/machine-t2.png"
-    observacao: "/assets/img/bateria1.png"
-    observacao2: "/assets/img/comchip1.png"
-    touch: false
-    qrcode_pix: false
-    bateria_extra: true
-    comprovante_impresso: false
-  - nome: T3 Mega
-    valor: "958,80"
-    valor_promocional: "382,80"
-    valor_12x: 31
-    foto: "/assets/img/machine-t3.png"
-    observacao: "/assets/img/comchip1.png"
-    observacao2: "/assets/img/combobina1.png"
-    touch: false
-    qrcode_pix: true
-    bateria_extra: false
-    comprovante_impresso: true
   - nome: T3 Smart Mega
     valor: "958,80"
-    valor_promocional: "466,80"
-    valor_12x: 38
+    valor_promocional: "443,46"
+    valor_12x: 36
+    valor_cents: 95
     foto: "/assets/img/machine-t3-smart.png"
     observacao: "/assets/img/touchscreen1.png"
     observacao2: "/assets/img/bateria1.png"
+    url: https://ton.com.br/checkout/#/cart?productId=MEGATON_TIER_SMART_POS&referrer=5FCA238E-FF9A-4C6C-9CD5-AC7A0705B05C&userTag=megaton_tier&utm_medium=invite_share&utm_source=revendedor
     touch: true
     qrcode_pix: true
     bateria_extra: true
     comprovante_impresso: true
+  - nome: T3 Mega
+    valor: "958,80"
+    valor_promocional: "363,66"
+    valor_12x: 30
+    valor_cents: 30
+    foto: "/assets/img/machine-t3.png"
+    observacao: "/assets/img/comchip1.png"
+    observacao2: "/assets/img/combobina1.png"
+    url: https://ton.com.br/checkout/#/cart?productId=MEGATON_TIER_S920&referrer=5FCA238E-FF9A-4C6C-9CD5-AC7A0705B05C&userTag=megaton_tier&utm_medium=invite_share&utm_source=revendedor
+    touch: false
+    qrcode_pix: true
+    bateria_extra: false
+    comprovante_impresso: true
+  - nome: T2+ Mega
+    valor: "478,80"
+    valor_promocional: "147,06"
+    valor_12x: 12
+    valor_cents: 25
+    foto: "/assets/img/machine-t2.png"
+    observacao: "/assets/img/bateria1.png"
+    observacao2: "/assets/img/comchip1.png"
+    url: https://ton.com.br/checkout/#/cart?productId=MEGATON_TIER_D195&referrer=5FCA238E-FF9A-4C6C-9CD5-AC7A0705B05C&userTag=megaton_tier&utm_medium=invite_share&utm_source=revendedor
+    touch: false
+    qrcode_pix: false
+    bateria_extra: true
+    comprovante_impresso: false
+  - nome: T1 Chip Mega
+    valor: "318,80"
+    valor_promocional: "204,06"
+    valor_12x: 17
+    valor_cents: 00
+    foto: "/assets/img/machine-t1-chip.png"
+    observacao: "/assets/img/comchip1.png"
+    observacao2: "none"
+    url: https://ton.com.br/checkout/#/cart?productId=MEGATON_TIER_T1_CHIP&referrer=5FCA238E-FF9A-4C6C-9CD5-AC7A0705B05C&userTag=megaton_tier&utm_medium=invite_share&utm_source=revendedor
+    touch: false
+    qrcode_pix: false
+    bateria_extra: false
+    comprovante_impresso: false
+  - nome: T1 Mega
+    valor: "198,80"
+    valor_promocional: "90,06"
+    valor_12x: 7
+    valor_cents: 50
+    foto: "/assets/img/machine-t1.png"
+    observacao: "/assets/img/precisadecelular.png"
+    observacao2: "none"
+    url: https://ton.com.br/checkout/#/cart?productId=MEGATON_TIER_D150&referrer=5FCA238E-FF9A-4C6C-9CD5-AC7A0705B05C&userTag=megaton_tier&utm_medium=invite_share&utm_source=revendedor
+    touch: false
+    qrcode_pix: false
+    bateria_extra: false
+    comprovante_impresso: false
+
 - nome: Ton Básico
   id: ton-basico
   texto: Maquinas com os melhores preços
@@ -206,61 +238,72 @@
   debito: 1,99%
   credito: 4,99%
   credito_12x: 22,59%
-  taxa_tabela: ""
-  modal_id: ""
+  taxa_tabela: "/assets/img/TonBasico-tab.png"
+  modal_id: "tonbasico"
+  observaco_taxas: "Sem mínimo de vendas"
   maquinas:
-  - nome: T1 Básico
-    valor: "198,80"
-    valor_promocional: "22,80"
-    valor_12x: 1
-    foto: "/assets/img/machine-t1.png"
-    observacao: "/assets/img/precisadecelular.png"
-    observacao2: "none"
-    touch: false
-    qrcode_pix: false
-    bateria_extra: false
-    comprovante_impresso: false
-  - nome: T1 Chip Básico
-    valor: "318,80"
-    valor_promocional: "142,80"
-    valor_12x: 11
-    foto: "/assets/img/machine-t1-chip.png"
-    observacao: "/assets/img/comchip1.png"
-    observacao2: "none"
-    touch: false
-    qrcode_pix: false
-    bateria_extra: false
-    comprovante_impresso: false
-  - nome: T2+ Básico
-    valor: "478,80"
-    valor_promocional: "118,80"
-    valor_12x: 9
-    foto: "/assets/img/machine-t2.png"
-    observacao: "/assets/img/bateria1.png"
-    observacao2: "/assets/img/comchip1.png"
-    touch: false
-    qrcode_pix: false
-    bateria_extra: true
-    comprovante_impresso: false
-  - nome: T3 Básico
-    valor: "958,80"
-    valor_promocional: "238,80"
-    valor_12x: 19
-    foto: "/assets/img/machine-t3.png"
-    observacao: "/assets/img/comchip1.png"
-    observacao2: "/assets/img/combobina1.png"
-    touch: false
-    qrcode_pix: true
-    bateria_extra: false
-    comprovante_impresso: true
   - nome: T3 Smart Básico
     valor: "958,80"
-    valor_promocional: "358,80"
-    valor_12x: 29
+    valor_promocional: "340,86"
+    valor_12x: 28
+    valor_cents: 40
     foto: "/assets/img/machine-t3-smart.png"
     observacao: "/assets/img/touchscreen1.png"
     observacao2: "/assets/img/bateria1.png"
+    url: https://ton.com.br/checkout/#/cart?productId=TONBASE_TIER_SMART_POS&referrer=5FCA238E-FF9A-4C6C-9CD5-AC7A0705B05C&userTag=tonbase_tier&utm_medium=invite_share&utm_source=revendedor
     touch: true
     qrcode_pix: true
     bateria_extra: true
     comprovante_impresso: true
+  - nome: T3 Básico
+    valor: "226,86"
+    valor_promocional: "238,80"
+    valor_12x: 18
+    valor_cents: 90
+    foto: "/assets/img/machine-t3.png"
+    observacao: "/assets/img/comchip1.png"
+    observacao2: "/assets/img/combobina1.png"
+    url: https://ton.com.br/checkout/#/cart?productId=TONBASE_TIER_S920&referrer=5FCA238E-FF9A-4C6C-9CD5-AC7A0705B05C&userTag=tonbase_tier&utm_medium=invite_share&utm_source=revendedor
+    touch: false
+    qrcode_pix: true
+    bateria_extra: false
+    comprovante_impresso: true
+  - nome: T2+ Básico
+    valor: "478,80"
+    valor_promocional: "112,86"
+    valor_12x: 9
+    valor_cents: 40
+    foto: "/assets/img/machine-t2.png"
+    observacao: "/assets/img/bateria1.png"
+    observacao2: "/assets/img/comchip1.png"
+    url: https://ton.com.br/checkout/#/cart?productId=TONBASE_TIER_D195&referrer=5FCA238E-FF9A-4C6C-9CD5-AC7A0705B05C&userTag=tonbase_tier&utm_medium=invite_share&utm_source=revendedor
+    touch: false
+    qrcode_pix: false
+    bateria_extra: true
+    comprovante_impresso: false
+  - nome: T1 Chip Básico
+    valor: "318,80"
+    valor_promocional: "135,66"
+    valor_12x: 11
+    valor_cents: 30
+    foto: "/assets/img/machine-t1-chip.png"
+    observacao: "/assets/img/comchip1.png"
+    observacao2: "none"
+    url: https://ton.com.br/checkout/#/cart?productId=TONBASE_TIER_T1_CHIP&referrer=5FCA238E-FF9A-4C6C-9CD5-AC7A0705B05C&userTag=tonbase_tier&utm_medium=invite_share&utm_source=revendedor
+    touch: false
+    qrcode_pix: false
+    bateria_extra: false
+    comprovante_impresso: false
+  - nome: T1 Básico
+    valor: "198,80"
+    valor_promocional: "22,80"
+    valor_12x: 1
+    valor_cents: 90
+    foto: "/assets/img/machine-t1.png"
+    observacao: "/assets/img/precisadecelular.png"
+    observacao2: "none"
+    url: https://ton.com.br/checkout/#/cart?productId=TONBASE_TIER_D150&referrer=5FCA238E-FF9A-4C6C-9CD5-AC7A0705B05C&userTag=tonbase_tier&utm_medium=invite_share&utm_source=revendedor
+    touch: false
+    qrcode_pix: false
+    bateria_extra: false
+    comprovante_impresso: false

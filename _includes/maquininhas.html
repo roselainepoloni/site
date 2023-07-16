@@ -1,3 +1,4 @@
+<a name="maquininhas"></a>
 <div class="flex flex-col lg:mx-auto lg:max-w-[1280px] md:px-24  xl:px-0`">
   <div class="text-center mb-2">
     <h2 class="text-3xl mt-24">Escolha seu <strong>plano</strong></h2>
@@ -19,55 +20,51 @@
     <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
     {% for promocao in site.data.maquininhas %}
     <li class="mr-2" role="presentation">
-      <a href="#maquininhas">
-        <button class="mb-6 lg:mb-0" id="{{ promocao.id }}-tab" data-tabs-target="#{{ promocao.id }}" type="button" role="tab" aria-controls="{{ promocao.id }}" aria-selected="false">
-          <div class="rounded-lg h-[250px] bg-white hover:shadow-lg border border-gray-200 m-2 hover:border-green-300 p-1">
-            <div class="p-2">
-              <div class="flex justify-between items-center">
-                <h2 class="mb-4 text-3xl text-initial">
-                  <strong>{{promocao.nome}}</strong>
-                </h2>
-                <img class="w-16" alt="Icone Taxa Pix Qr Code" src="{{ site.base_url }}/assets/img/taxapixqrcode.png">
-              </div>
-              <p class="mb-4 mt-4">
-                {{promocao.texto}}
-              </p>
-              <div class="bg-gray-100 rounded-lg p-3">
-                <ul>
-                  <div class="flex justify-center space-x-4 text-center uppercase">
-                    <l1>
-                      <h1 class="font-bold text-xs">DÉBITO</h1>
-                      <p class="text-2xl text-[rgb(0,148,32)] font-bold">{{promocao.debito}}</p>
-                    </l1>
-                    <l1>
-                      <h1 class="font-bold text-xs">CRÉDITO</h1>
-                      <p class="text-2xl text-[rgb(0,148,32)] font-bold">{{promocao.credito}}</p>
-                    </l1>
-                    <l1>
-                      <h1 class="font-bold text-xs whitespace-nowrap ">CRÉDITO 12x</h1>
-                      <p class="text-2xl text-[rgb(0,148,32)] font-bold">{{promocao.credito_12x}}</p>
-                    </l1>
-                  </div>
-                </ul>
-              </div>
-              <div class="bg-gray-50 rounded-t-none rounded-b items-center justify-center -mt-2">
-                {% if promocao.promocional %}
-                  <p>Taxas promocionais</p>
-                {% endif %}
-                {% if promocao.url_regulamento %}
-                  <a class="hover:underline" href="{{ promocao.url_regulamento }}" target="_blank">Confira o Regulamento</a>
-                {% endif %}
-              </div>
+      <button class="mb-6 lg:mb-0" id="{{ promocao.id }}-tab" data-tabs-target="#{{ promocao.id }}" type="button" role="tab" aria-controls="{{ promocao.id }}" aria-selected="false">
+        <div class="rounded-lg h-[250px] bg-white hover:shadow-lg border border-gray-200 m-2 hover:border-green-300 p-1">
+          <div class="p-2">
+            <div class="flex justify-between items-center">
+              <h2 class="mb-4 text-3xl text-initial">
+                <strong>{{promocao.nome}}</strong>
+              </h2>
+              <img class="w-16" alt="Icone Taxa Pix Qr Code" src="{{ site.base_url }}/assets/img/taxapixqrcode.png">
+            </div>
+            <p class="mb-4 mt-4">
+              {{promocao.texto}}
+            </p>
+            <div class="bg-gray-100 rounded-lg p-3">
+              <ul>
+                <div class="flex justify-center space-x-4 text-center uppercase">
+                  <l1>
+                    <h1 class="font-bold text-xs">DÉBITO</h1>
+                    <p class="text-2xl text-[rgb(0,148,32)] font-bold">{{promocao.debito}}</p>
+                  </l1>
+                  <l1>
+                    <h1 class="font-bold text-xs">CRÉDITO</h1>
+                    <p class="text-2xl text-[rgb(0,148,32)] font-bold">{{promocao.credito}}</p>
+                  </l1>
+                  <l1>
+                    <h1 class="font-bold text-xs whitespace-nowrap ">CRÉDITO 12x</h1>
+                    <p class="text-2xl text-[rgb(0,148,32)] font-bold">{{promocao.credito_12x}}</p>
+                  </l1>
+                </div>
+              </ul>
+            </div>
+            <div class="bg-gray-50 rounded-t-none rounded-b items-center justify-center -mt-2">
+              {% if promocao.promocional %}
+                <p>Taxas promocionais</p>
+              {% endif %}
+              {% if promocao.url_regulamento %}
+                <a class="hover:underline" href="{{ promocao.url_regulamento }}" target="_blank">Confira o Regulamento</a>
+              {% endif %}
             </div>
           </div>
-        </button>
-      </a>
+        </div>
+      </button>
     </li>
     {% endfor %}
   </ul>
 </div>
-<section id="maquininhas">
-</section>
 <div id="myTabContent">
   {% for promocao in site.data.maquininhas %}
     <div class="hidden container mx-auto md:px-2" id="{{ promocao.id }}" role="tabpanel" aria-labelledby="{{ promocao.id }}-tab">
@@ -126,7 +123,7 @@
                         <p class="mt-1 leading-none text-[rgb(0,148,32)] ">R$</p>
                       </div>
                       <p class="self-end text-[78px] leading-[58px] text-[rgb(0,148,32)]">{{maquina.valor_12x}}</p>
-                      <p class="leading-[20px] text-[rgb(0,148,32)]">,90</p>
+                      <p class="leading-[20px] text-[rgb(0,148,32)]">,{{maquina.valor_cents}}</p>
                     </div>
                   </div>
 
@@ -134,9 +131,9 @@
                     <p class="text-initial p-2 w-auto">Receba <b>100% de Cashback</b> da sua 1ª maquininha ao atingir R$ 10 mil em vendas </p>
                   </div>
                   <div class="flex justify-center mb-2">
-                    <button class="bg-[rgb(0,235,51)] p-4 rounded-full w-full hover:ring-green-300 hover:ring-2 hover:bg-opacity-80">
+                    <a href="{{ maquina.url }}" target="_blank" class="bg-[rgb(0,235,51)] p-4 rounded-full w-full hover:ring-green-300 hover:ring-2 hover:bg-opacity-80">
                       <p class="font-bold">Pedir {{maquina.nome}}</p>
-                    </button>
+                    </a>
                   </div>
 
                   <div class="flex justify-center">
