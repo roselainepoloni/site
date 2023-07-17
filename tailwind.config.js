@@ -9,8 +9,13 @@ module.exports = {
     './*.html',
   ],
   theme: {
-    theme: {
-      extend: {},
+    extend: {
+      colors: {
+        'brand-100': '#87eb87',
+        'brand-200': '#00d700',
+        'brand-300': '#006e00',
+        'brand-400': '#003c00'
+      },
     },
   },
   plugins: [
